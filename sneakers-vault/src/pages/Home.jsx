@@ -1,4 +1,6 @@
 import styles from "./Home.module.css";
+import ProductRotator from "../components/ProductRotator";
+import { products } from "../data/products";
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
             <button>WOMEN</button>
             <button>KIDS</button>
           </div>
+          {/* Rotatore con 3 prodotti */}
+          <ProductRotator products={products} />
         </div>
       </div>
     </>

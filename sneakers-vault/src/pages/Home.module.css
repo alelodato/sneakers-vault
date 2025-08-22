@@ -10,6 +10,7 @@
   font-family: "Bebas Neue", sans-serif;
   font-weight: 600;
   font-style: normal;
+  letter-spacing: 1px;
   text-align: center;
   font-size: 2.5rem;
   color: #fff;
@@ -25,7 +26,7 @@
   margin: 10px 10px 20px 10px;
   width: 80px;
   height: 40px;
-  background: #ffffff57;
+  background: #888888a6;
   border: black 1px;
   border-radius: 5px;
   font-size: 1rem;

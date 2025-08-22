@@ -1,0 +1,22 @@
+import { Link } from "react-router-dom";
+import styles from "./ProductCard.module.css";
+
+export default function ProductCard({ p }) {
+  return (
+    <article className={styles.card}>
+      <Link to={`/product/${p.slug}`}>
+        <div className={styles.thumb}>
+          <img className={styles.img} src={p.image} alt={p.title} />
+          {p.hoverImage && (
+            <img className={styles.imgHover} src={p.hoverImage} alt={`${p.title} alt`} />
+          )}
+        </div>
+        <div className={styles.row}>
+          <h3 className={styles.title}>{p.title}</h3>
+          <span className={styles.price}>€ {p.price.toFixed(2)}</span>
+        </div>
+        <div className={styles.brand}>{p.brand}</div>
+      </Link>
+    </article>
+  );
+}
