@@ -6,7 +6,7 @@ export const products = [
     brand: 'Nike',
     price: 149.9,
     image: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1200&auto=format&fit=crop',
-    hoverImage: 'https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop'
+    hoverImage: ''
   },
   {
     id: 'sku-ozweego-cream',
@@ -14,8 +14,8 @@ export const products = [
     title: 'adidas OZWEEGO — Cream',
     brand: 'adidas',
     price: 119,
-    image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1200&auto=format&fit=crop',
-    hoverImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1739444929269-341792e2a4ea?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage: 'https://images.unsplash.com/photo-1739444929249-5af4d61276a9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'sku-550-green',
@@ -23,16 +23,7 @@ export const products = [
     title: 'New Balance 550 — Green',
     brand: 'New Balance',
     price: 139,
-    image: 'https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=1200&auto=format&fit=crop',
-    hoverImage: 'https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop',
+    hoverImage: ''
   },
-  {
-    id: 'sku-xt6-white',
-    slug: 'salomon-xt6-white',
-    title: 'Salomon XT-6 — White',
-    brand: 'Salomon',
-    price: 175,
-    image: 'https://images.unsplash.com/photo-1661961110197-00e623d7b4a7?q=80&w=1200&auto=format&fit=crop',
-    hoverImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop'
-  }
 ];
