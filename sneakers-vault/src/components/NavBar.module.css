@@ -1,14 +1,47 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #fff;
-    position: sticky;
-    top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #fff;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.icon {
+  margin: 5px;
+}
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+.logo {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
     color: #000000;
-    font-size: 2rem;
+    font-size: 2.5rem;
+}
+}
+
+/*Media query for laptops and larger screens (992 and up)*/
+@media screen and (min-width: 992px) {
+}
+
+/*Media query for computers,large laptops and upwards (1200px and higher)*/
+@media screen and (min-width: 1200px) {
+.logo {
+  font-size: 2.5rem;
+}
+
+.icon {
+  margin: 15px;
+}
 }
