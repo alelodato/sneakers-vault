@@ -5,3 +5,21 @@
   text-align: center;
   font-size: 1.5rem;
 }
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+.hometitle {
+    font-size: 2rem;
+}
+}
+
+/*Media query for laptops and larger screens (992 and up)*/
+@media screen and (min-width: 992px) {
+    .hometitle {
+    font-size: 2.5rem;
+}
+}
+
+/*Media query for computers,large laptops and upwards (1200px and higher)*/
+@media screen and (min-width: 1200px) {
+}
