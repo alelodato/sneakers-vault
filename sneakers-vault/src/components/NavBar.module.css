@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #fff;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    color: #000000;
+    font-size: 2rem;
+}
