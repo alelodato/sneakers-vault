@@ -8,9 +8,9 @@ export default function Home() {
             <br />Step into style.</h2>
     </div>
     <div className={styles.homebuttons}>
-        <button>Men</button>
-        <button>Women</button>
-        <button>Kids</button>
+        <button>MEN</button>
+        <button>WOMEN</button>
+        <button>KIDS</button>
     </div>
     </>
     );
