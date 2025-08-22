@@ -1,9 +1,20 @@
+.homeintro {
+  background: url(../assets/img/hero-sneakers.jpeg) no-repeat center center/cover;
+}
+
+.homecover {
+  background: radial-gradient(rgb(0 0 0 / 55%));
+}
+
 .hometitle {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 600;
   font-style: normal;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  padding-top: 20px;
+  margin-bottom: 0;
 }
 
 .homebuttons {
@@ -11,10 +22,10 @@
 }
 
 .homebuttons button {
-  margin: 10px;
+  margin: 10px 10px 20px 10px;
   width: 80px;
   height: 40px;
-  background: #000000;
+  background: #ffffff57;
   border: black 1px;
   border-radius: 5px;
   font-size: 1rem;
@@ -39,7 +50,8 @@
 /*Media query for laptops and larger screens (992 and up)*/
 @media screen and (min-width: 992px) {
   .hometitle {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
   }
 }
 
