@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import styles from "./ProductRotator.module.css";
 
-export default function ProductRotator({ products, interval = 4000 }) {
+export default function ProductRotator({ products, interval = 10000 }) {
   const [start, setStart] = useState(0); // indice di partenza del gruppo da 3
   const len = products.length;
 
