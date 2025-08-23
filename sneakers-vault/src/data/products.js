@@ -7,7 +7,6 @@ export const products = [
     price: 270,
     tags: ['hot'],
     image: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1200&auto=format&fit=crop',
-    hoverImage: ''
   },
   {
     id: 'adidas-gazelle-white',
@@ -28,7 +27,6 @@ export const products = [
     discount:50,
     tags:['sale'],
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop',
-    hoverImage: ''
   },
   {
     id: 'jordan-1-low',
@@ -48,7 +46,6 @@ export const products = [
     price: 215,
     tags:['hot'],
     image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'nike-air-force-1',
@@ -89,7 +86,6 @@ export const products = [
     discount: 70,
     tags: ['sale'],
     image: 'https://images.unsplash.com/photo-1651013691313-81b822df0044?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'adidas-original-forum-bonega',
@@ -99,7 +95,6 @@ export const products = [
     price: 89,
     tags:['new'],
     image: 'https://images.unsplash.com/photo-1698108223397-3d222e80d7ea?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'new-balance-ct302',
@@ -109,7 +104,6 @@ export const products = [
     price: 80,
     tags:['new'],
     image: 'https://images.unsplash.com/photo-1690988550369-db0fe19c1baf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'lacoste-carnaby',
@@ -203,7 +197,6 @@ export const products = [
     discount: 50,
     tags: ['sale'],
     image: 'https://images.unsplash.com/photo-1608551279774-4b0c208cf00d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'puma-shuffle-mid',
@@ -213,7 +206,6 @@ export const products = [
     price: 79,
     tags:['new'],
     image: 'https://images.unsplash.com/photo-1662037131816-aa2d7245166c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'austin-mt',
@@ -223,7 +215,6 @@ export const products = [
     price: 199,
     tags:['hot'],
     image: 'https://images.unsplash.com/photo-1651255122187-d49ae6f41736?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'puma-se',
@@ -233,7 +224,6 @@ export const products = [
     price: 109,
     tags:['new'],
     image: 'https://images.unsplash.com/photo-1619253341026-74c609e6ce50?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
   {
     id: 'puma-smash',
@@ -254,6 +244,5 @@ export const products = [
     price: 70,
     tags:['new'],
     image: 'https://images.unsplash.com/photo-1680204101400-aeac783c9d87?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    hoverImage: ''
   },
 ];
