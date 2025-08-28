@@ -7,6 +7,7 @@ export const products = [
     price: 270,
     tags: ['hot'],
     image: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1200&auto=format&fit=crop',
+    hoverImage:'https://images.unsplash.com/photo-1582451669266-71f7e1cca3dc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 'adidas-gazelle-white',
@@ -27,7 +28,7 @@ export const products = [
     discount:50,
     tags:['sale'],
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop',
-  },
+  },hoverImage:'https://media.istockphoto.com/id/1391533360/it/foto/scarpe-sneakers-rosse.jpg?s=1024x1024&w=is&k=20&c=TB0wFKcR31BSBn_sW0zjCqUYpR1aic0ad7S46QFbdcc=',
   {
     id: 'jordan-1-low',
     slug: 'jordan-1-low-black-red-white',
