@@ -4,6 +4,12 @@ import { products } from "../data/products";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+
+  const hot = products.filter(p => p.tags?.includes("hot"));
+  const onSale = products.filter(p => p.tags?.includes("sale"));
+  const newArrivals = products.filter(p => p.tags?.includes("new"));
+
+
   return (
     <>
       <div className={styles.homeintro}>
@@ -22,13 +28,13 @@ export default function Home() {
           </div>
           {/* Rotatore con 3 prodotti */}
           <h3 className={styles.hot}>🔥HOTTEST ON THE MARKET🔥</h3>
-          <ProductRotator products={products} />
+          <ProductRotator products={hot} />
           <p className={styles.more}>SEE MORE <i class="fa-regular fa-circle-right"></i></p>
           <h3 className={styles.sale}>ITEMS ON SALE (UP TO 70%)</h3>
-          <ProductRotator products={products} />
+          <ProductRotator products={onSale} />
           <p className={styles.more}>SEE MORE <i class="fa-regular fa-circle-right"></i></p>
           <h3 className={styles.sale}>NEW ARRIVALS</h3>
-          <ProductRotator products={products} />
+          <ProductRotator products={newArrivals} />
           <p className={styles.more}>SEE MORE <i class="fa-regular fa-circle-right"></i></p>
           <h4 className={styles.newsletter}>Sign Up to our newsletter <i class="fa-solid fa-angle-down"></i></h4>
           <h4 className={styles.contact}><Link className={styles.link} to={'Contact'}>Contact Us</Link></h4>

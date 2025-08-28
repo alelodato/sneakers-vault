@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 'nike-air-force-1',
+    id: 'nike-air-force-1-blk',
     slug: 'nike-air-force-1-black',
     title: 'Nike Air Max 1 — Black',
     brand: 'Nike',
@@ -39,7 +39,7 @@ export const products = [
     hoverImage: 'https://images.unsplash.com/photo-1696954895434-fc503a498486?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
-    id: 'nike-air-force-1',
+    id: 'nike-air-force-1-pst',
     slug: 'nike-air-force-1-shadow-pastel',
     title: 'Nike Air Force 1 Shadow Pastel',
     brand: 'Nike',
@@ -48,7 +48,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
-    id: 'nike-air-force-1',
+    id: 'nike-air-force-1-w',
     slug: 'nike-air-force-1-white',
     title: 'Nike Air Force 1 White',
     brand: 'Nike',
@@ -97,7 +97,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1698108223397-3d222e80d7ea?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
-    id: 'new-balance-ct302',
+    id: 'new-balance-ct302-w',
     slug: 'new-balance-ct302-white',
     title: 'New Balance CT302 White',
     brand: 'New Balance',
@@ -112,11 +112,11 @@ export const products = [
     brand: 'Lacoste',
     price: 110,
     tags:['hot'],
-    image: 'https://unsplash.com/photos/a-white-and-green-sneaker-on-a-wooden-table-LnP6U_grkjQ',
+    image: 'https://images.unsplash.com/photo-1722489292294-426912777649?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     hoverImage: 'https://images.unsplash.com/photo-1722489291844-b7ef817e10d5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
-    id: 'new-balance-ct302',
+    id: 'new-balance-ct302-wp',
     slug: 'new-balance-ct302-white-pink',
     title: 'New Balance CT302 White & Pink',
     brand: 'New Balance',
