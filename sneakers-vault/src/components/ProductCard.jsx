@@ -16,6 +16,10 @@ export default function ProductCard({ p }) {
           <span className={styles.price}>€ {p.price.toFixed(2)}</span>
         </div>
         <div className={styles.brand}>{p.brand}</div>
+        <div className={styles.cardIcons}>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-regular fa-heart"></i>
+        </div>
       </Link>
     </article>
   );

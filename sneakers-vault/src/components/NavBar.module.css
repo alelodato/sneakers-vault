@@ -31,6 +31,12 @@ header {
     cursor: pointer;
 }
 
+.left i,
+.right i {
+  font-size: 1rem;
+  padding: 10px;
+}
+
 /*Media query for tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
 .logo {
@@ -44,6 +50,19 @@ header {
 
 /*Media query for laptops and larger screens (992 and up)*/
 @media screen and (min-width: 992px) {
+  .left {
+  padding-left: 20px;
+}
+
+.right{
+  padding-right: 20px;
+}
+
+.left i,
+.right i {
+  font-size: 2rem;
+  padding: 20px;
+}
 }
 
 /*Media query for computers,large laptops and upwards (1200px and higher)*/

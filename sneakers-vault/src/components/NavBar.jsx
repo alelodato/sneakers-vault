@@ -7,8 +7,8 @@ export default function NavBar() {
         <header className={styles.header}>
             {/* Left: Menu + Search */}
             <div className={styles.left}>
-                <FaBars size={22} className={styles.icon} />
-                <FaSearch size={22} className={styles.icon} />
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
             {/* Center: Logo */}
@@ -17,8 +17,8 @@ export default function NavBar() {
             </Link>
             {/* Right: Favourites + Cart */}
             <div className={styles.right}>
-                <FaHeart size={22} className={styles.icon} />
-                <FaShoppingBag size={22} className={styles.icon} />
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
             </div>
             </header>
     );
