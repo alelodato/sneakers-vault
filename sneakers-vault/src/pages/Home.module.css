@@ -3,7 +3,7 @@
 }
 
 .homecover {
-  background: radial-gradient(rgb(0 0 0 / 55%));
+  background: radial-gradient(rgba(0, 0, 0, 0.626));
 }
 
 .hometitle {
