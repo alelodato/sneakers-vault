@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
+import { useCart } from "../contexts/CartContext";
+import { useWishlist } from "../contexts/WishlistContext";
 
 export default function ProductCard({ p }) {
+  const { addToCart } = useCart();
+  const { addToWishlist } = useWishlist();
   return (
     <article className={styles.card}>
       <Link to={`/product/${p.slug}`}>
@@ -17,8 +21,8 @@ export default function ProductCard({ p }) {
         </div>
         <div className={styles.brand}>{p.brand}</div>
         <div className={styles.cardIcons}>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping" onClick={() => addToCart(p)}></i>
+        <i class="fa-regular fa-heart" onClick={() => addToWishlist(p)}></i>
         </div>
       </Link>
     </article>

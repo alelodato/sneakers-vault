@@ -9,6 +9,8 @@ import KidsProducts from "./pages/KidsProducts";
 import OnSale from "./pages/OnSale";
 import Trending from "./pages/Trending";
 import NewArrivals from "./pages/NewArrivals";
+import Cart from "./pages/Shop";
+import Wishlist from "./pages/WishList";
 import './App.css'
 
 
@@ -18,7 +20,8 @@ export default function App() {
     <NavBar />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/shop" element={<Shop />} />
+      <Route path="/shop" element={<Cart />} />
+      <Route path="/wish" element={<Wishlist />} />
       <Route path="/checkout" element={<CheckOut />} />
       <Route path="/men" element={<MenProducts />} />
       <Route path="/women" element={<WomenProducts />} />

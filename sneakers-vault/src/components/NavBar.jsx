@@ -1,4 +1,3 @@
-import { FaBars, FaSearch, FaHeart, FaShoppingBag } from "react-icons/fa";
 import styles from "./NavBar.module.css";
 import { Link } from "react-router-dom";
 
@@ -7,7 +6,7 @@ export default function NavBar() {
         <header className={styles.header}>
             {/* Left: Menu + Search */}
             <div className={styles.left}>
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars" ></i>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
@@ -17,8 +16,12 @@ export default function NavBar() {
             </Link>
             {/* Right: Favourites + Cart */}
             <div className={styles.right}>
+                <Link className={styles.link} to="/wish">
                 <i class="fa-regular fa-heart"></i>
+                </Link>
+                <Link className={styles.link} to="/shop">
                 <i class="fa-solid fa-cart-shopping"></i>
+                </Link>
             </div>
             </header>
     );
