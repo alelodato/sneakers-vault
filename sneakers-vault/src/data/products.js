@@ -48,6 +48,7 @@ export const products = [
     price: 215,
     tags:['hot', 'women'],
     image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1580894529572-79b20170f355?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'nike-air-force-1-w',
@@ -88,6 +89,7 @@ export const products = [
     discount: 70,
     tags: ['sale', 'men', 'women'],
     image: 'https://images.unsplash.com/photo-1651013691313-81b822df0044?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1645846123684-f6f33a2eb3ec?q=80&w=1138&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'adidas-original-forum-bonega',
@@ -97,6 +99,7 @@ export const products = [
     price: 89,
     tags:['new', 'women'],
     image: 'https://images.unsplash.com/photo-1698108223397-3d222e80d7ea?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1670416035623-6538fd6810c9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'new-balance-ct302-w',
@@ -106,6 +109,7 @@ export const products = [
     price: 80,
     tags:['new', 'women'],
     image: 'https://images.unsplash.com/photo-1690988550369-db0fe19c1baf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1577982886439-c25dc08b0c01?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'lacoste-carnaby',
@@ -199,6 +203,7 @@ export const products = [
     discount: 50,
     tags: ['sale', 'women'],
     image: 'https://images.unsplash.com/photo-1608551279774-4b0c208cf00d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1591781997999-a600e7a43f27?q=80&w=768&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'puma-shuffle-mid',
@@ -208,6 +213,7 @@ export const products = [
     price: 79,
     tags:['new', 'men'],
     image: 'https://images.unsplash.com/photo-1662037131816-aa2d7245166c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1608230616491-5d696aa9fe52?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'austin-mt',
@@ -217,6 +223,7 @@ export const products = [
     price: 199,
     tags:['hot', 'men'],
     image: 'https://images.unsplash.com/photo-1651255122187-d49ae6f41736?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1650776967849-d037bd1ddab9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'puma-se',
@@ -226,6 +233,7 @@ export const products = [
     price: 109,
     tags:['new', 'women'],
     image: 'https://images.unsplash.com/photo-1619253341026-74c609e6ce50?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1715714275887-fbfc77fe90ab?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 'puma-smash',
@@ -246,5 +254,6 @@ export const products = [
     price: 70,
     tags:['new', 'men', 'women'],
     image: 'https://images.unsplash.com/photo-1680204101400-aeac783c9d87?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1661152655333-7b5275ad6baa?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
 ];
