@@ -35,13 +35,19 @@ export default function Home() {
           {/* Rotatore con 3 prodotti */}
           <h3 className={styles.hot}>🔥HOTTEST ON THE MARKET🔥</h3>
           <ProductRotator products={hot} />
+          <Link className={styles.link} to="/trend">
           <p className={styles.more}>SEE MORE <i class="fa-regular fa-circle-right"></i></p>
+          </Link>
           <h3 className={styles.sale}>ITEMS ON SALE (UP TO 70%)</h3>
           <ProductRotator products={onSale} />
+          <Link className={styles.link} to="/sale">
           <p className={styles.more}>SEE MORE <i class="fa-regular fa-circle-right"></i></p>
+          </Link>
           <h3 className={styles.sale}>NEW ARRIVALS</h3>
           <ProductRotator products={newArrivals} />
+          <Link className={styles.link} to="/new">
           <p className={styles.more}>SEE MORE <i class="fa-regular fa-circle-right"></i></p>
+          </Link>
           <h4 className={styles.newsletter}>Sign Up To Our Newsletter <i class="fa-solid fa-angle-down"></i></h4>
           <h4 className={styles.contact}><Link className={styles.link} to={'Contact'}>Contact Us</Link></h4>
           <h4 className={styles.lang}>English <i class="fa-solid fa-angle-down"></i></h4>

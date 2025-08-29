@@ -6,7 +6,11 @@ import CheckOut from "./pages/CheckOut";
 import MenProducts from "./pages/MenProducts";
 import WomenProducts from "./pages/WomenProducts";
 import KidsProducts from "./pages/KidsProducts";
+import OnSale from "./pages/OnSale";
+import Trending from "./pages/Trending";
+import NewArrivals from "./pages/NewArrivals";
 import './App.css'
+
 
 export default function App() {
   return (
@@ -19,6 +23,9 @@ export default function App() {
       <Route path="/men" element={<MenProducts />} />
       <Route path="/women" element={<WomenProducts />} />
       <Route path="/kids" element={<KidsProducts />} />
+      <Route path="/trend" element={<Trending />} />
+      <Route path="/sale" element={<OnSale />} />
+      <Route path="/new" element={<NewArrivals />} />
     </Routes>
     </>
   );

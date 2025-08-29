@@ -54,6 +54,7 @@ h3 {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  padding-top: 50px;
 }
 
 .more {
@@ -109,4 +110,7 @@ h3 {
 
 /*Media query for computers,large laptops and upwards (1200px and higher)*/
 @media screen and (min-width: 1200px) {
+  .hometitle {
+    padding-top: 30px;
+  }
 }
