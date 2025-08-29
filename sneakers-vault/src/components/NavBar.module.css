@@ -18,6 +18,10 @@ header {
   margin: 0;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .icon {
   margin: 5px;
 }

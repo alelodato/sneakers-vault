@@ -1,0 +1,19 @@
+.section {
+  background: url(../assets/img/shopBackground.jpg) no-repeat center
+    center/cover;
+}
+
+.coverTxt {
+  background: radial-gradient(rgba(0, 0, 0, 0.372));
+  padding: 16px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 4rem;
+  text-align: center;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}

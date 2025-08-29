@@ -1,5 +1,6 @@
 import { FaBars, FaSearch, FaHeart, FaShoppingBag } from "react-icons/fa";
 import styles from "./NavBar.module.css";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     return (
@@ -11,8 +12,9 @@ export default function NavBar() {
             </div>
 
             {/* Center: Logo */}
+            <Link className={styles.link} to="/">
             <h1 className={styles.logo}>Sneakers Vault</h1>
-
+            </Link>
             {/* Right: Favourites + Cart */}
             <div className={styles.right}>
                 <FaHeart size={22} className={styles.icon} />

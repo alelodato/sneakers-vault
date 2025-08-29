@@ -3,6 +3,9 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import CheckOut from "./pages/CheckOut";
+import MenProducts from "./pages/MenProducts";
+import WomenProducts from "./pages/WomenProducts";
+import KidsProducts from "./pages/KidsProducts";
 import './App.css'
 
 export default function App() {
@@ -13,6 +16,9 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/checkout" element={<CheckOut />} />
+      <Route path="/men" element={<MenProducts />} />
+      <Route path="/women" element={<WomenProducts />} />
+      <Route path="/kids" element={<KidsProducts />} />
     </Routes>
     </>
   );
