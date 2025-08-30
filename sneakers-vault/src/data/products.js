@@ -256,4 +256,164 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1680204101400-aeac783c9d87?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     hoverImage:'https://images.unsplash.com/photo-1661152655333-7b5275ad6baa?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
+  {
+    id: 'puma-suede-classic-blue',
+    slug: 'puma-suede-classic-blue',
+    title: 'Puma Suede Classic Blue',
+    brand: 'Puma',
+    price: 40,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1593548366595-c449f72ccb3d?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'stones-and-bone-lemmi-crs',
+    slug: 'stones-and-bone-lemmi-crs',
+    title: 'Stones And Bones Lemmi Calf Navy & Ivor',
+    brand: 'Stones And Bones',
+    price: 80,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1744814917835-eb4a2e82b8e8?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'stones-and-bones-lemmi-pink',
+    slug: 'stones-and-bones-lemmi-pink',
+    title: 'Stones And Bones Lemmi Pink',
+    brand: 'Stones And Bones',
+    price: 80,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1742390671609-9811019fe538?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'air-jordan-low-nero',
+    slug: 'air-jordan-low-nero',
+    title: 'Air Jordan Low Nero',
+    brand: '',
+    price: 70,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1679284392463-bfe74e6b75b8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1679284392816-191b1c849f76?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  },
+  {
+    id: 'philippe-model-paris-w',
+    slug: 'philippe-model-paris-w',
+    title: 'Philippe Model Paris White',
+    brand: 'Philippe Model',
+    price: 199,
+    tags:['hot', 'Women'],
+    image: 'https://images.unsplash.com/photo-1617713210693-bdd16fb3fb56?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1605034498188-5bb90e51930e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  },
+  {
+    id: 'ventela-republic-low-black',
+    slug: 'ventela-republic-low-black',
+    title: 'Ventela Republic Low Black',
+    brand: 'Ventela',
+    price: 40,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1750726134041-4dfd4d86592d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'air-jordan-high-blue',
+    slug: 'air-jordan-high-blue',
+    title: 'Air Jordan High Blue',
+    brand: 'Air Jordan',
+    price: 70,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1596036592126-66ebeb7c91ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://unsplash.com/photos/blue-and-orange-nike-sneakers-luGJ5ZkWQC0'
+  },
+  {
+    id: 'nike-air-huarache-w-or',
+    slug: 'nike-air-huarache-w-or',
+    title: 'Nike Air Huarache White & Orange',
+    brand: 'Nike',
+    price: 55,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1704900263740-c03c67a6c6d9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1704900264036-26bb66daa464?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  },
+  {
+    id: 'golden-goose-golden',
+    slug: 'golden-goose-golden',
+    title: 'Golden Goose Golden',
+    brand: 'Golden Goose',
+    price: 100,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1725271741207-b727541e983e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'stones-and-bones-vit-mauve',
+    slug: 'stones-and-bones-vit-mauve',
+    title: 'Stones And Bones Vit Mauve Pink',
+    brand: 'Stones And Bones',
+    price: 80,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1741783928523-e08a26beb206?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'air-jordan-1-high-red-b-kids',
+    slug: 'air-jordan-1-high-red-b-kids',
+    title: 'Air Jordan 1 High OG Heritage Junior',
+    brand: 'Air Jordan',
+    price: 60,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1667664585038-6eb05100f8dd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:'https://images.unsplash.com/photo-1600686436232-82a3c677bc51?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  },
+  {
+    id: 'stones-and-bones-kaki-jongens',
+    slug: 'stones-and-bones-kaki-jongens',
+    title: 'Stones And Bones Kaki Jongens',
+    brand: 'Stones And Bones',
+    price: 45,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1742390671619-5d4f2433e10a?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'stones-and-bones-low-lightblue',
+    slug: 'stones-and-bones-low-lightblue',
+    title: 'Stones And Bones Low Lightblue',
+    brand: 'Stones And Bones',
+    price: 50,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1741783873370-0aa88947c15f?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'stones-and-bones-nero-calf-moss',
+    slug: 'stones-and-bones-nero-calf-moss',
+    title: 'Stones And Bones Nero Calf Moss',
+    brand: 'Stones And Bones',
+    price: 70,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1742390671604-298585775fe9?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'stones-and-bones-lesti-calf-crs',
+    slug: 'stones-and-bones-lesti-calf-crs',
+    title: 'Stones And Bones Lesti Calf Crs',
+    brand: 'Stones And Bones',
+    price: 40,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1744814917891-070900ee021d?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
+  {
+    id: 'stones-and-bones-sneakers-pink',
+    slug: 'stones-and-bones-sneakers-pink',
+    title: 'Stones And Bones Sneakers Pink',
+    brand: 'Stones And Bones',
+    price: 70,
+    tags:['kids'],
+    image: 'https://images.unsplash.com/photo-1742390671587-38df317d351d?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    hoverImage:''
+  },
 ];
