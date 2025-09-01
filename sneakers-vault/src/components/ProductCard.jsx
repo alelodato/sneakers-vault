@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 import { useCart } from "../contexts/CartContext";
-import { useWishlist } from "../contexts/WishlistContext";
+import { useWishlist } from "../contexts/WishListContext";
 
 export default function ProductCard({ p }) {
   const { addToCart } = useCart();
