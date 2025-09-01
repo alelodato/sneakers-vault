@@ -15,9 +15,11 @@ export default function ProductCard({ p }) {
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!size) { setMsg("Seleziona la taglia"); return; }
+    if (!size) {
+      setMsg("Choose a Size");
+      return;
+    }
     setMsg("");
-    // se il tuo CartContext usa add(product, qty, size):
     addToCart(p, 1, size);
   };
 
@@ -34,7 +36,11 @@ export default function ProductCard({ p }) {
         <div className={styles.thumb}>
           <img className={styles.img} src={p.image} alt={p.title} />
           {p.hoverImage && (
-            <img className={styles.imgHover} src={p.hoverImage} alt={`${p.title} alt`} />
+            <img
+              className={styles.imgHover}
+              src={p.hoverImage}
+              alt={`${p.title} alt`}
+            />
           )}
         </div>
       </Link>
@@ -55,8 +61,38 @@ export default function ProductCard({ p }) {
       )}
 
       <div className={styles.cardIcons}>
-        <button type="button" className="fa-solid fa-cart-shopping" onClick={handleAddToCart} />
-        <button type="button" className="fa-regular fa-heart" onClick={handleWishlist} />
+        <button
+          type="button"
+          className={styles.iconBtn}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const needSize = Array.isArray(p.sizes) && p.sizes.length > 0;
+            if (needSize && !size) {
+              setMsg("Seleziona la taglia");
+              return;
+            }
+            addToCart(p, 1, size || null);
+          }}
+          aria-label="Add to cart"
+          title="Add to cart"
+        >
+          <i className="fa-solid fa-cart-shopping" />
+        </button>
+
+        <button
+          type="button"
+          className={styles.iconBtn}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            addToWishlist(p);
+          }}
+          aria-label="Add to wishlist"
+          title="Add to wishlist"
+        >
+          <i className="fa-regular fa-heart" />
+        </button>
       </div>
     </article>
   );
