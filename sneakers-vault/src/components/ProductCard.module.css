@@ -51,7 +51,7 @@
 }
 .title {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
 }
 .price {
   font-variant-numeric: tabular-nums;
@@ -63,9 +63,39 @@
 }
 
 .cardIcons {
-  text-align: right;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 8px;
 }
 
 .cardIcons i {
+  font-size: 1rem;
   padding: 5px;
+  color: #fff;
 }
+
+/* Bottoni icona (carrello/cuore) */
+.iconBtn {
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 8px;            /* per focus/hover piacevoli */
+  transition: transform .1s ease, background-color .15s ease, opacity .15s ease;
+}
+
+.iconBtn:hover { background: rgba(0,0,0,.06); transform: translateY(-1px); }
+.iconBtn:active { transform: translateY(0); opacity: .85; }
+.iconBtn:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+
+.error {
+  color: #d33;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* Stato cuore attivo (se lo usi) */
+.heartOn  { color: #e63946 !important; }
+.heartOff { color: inherit; }

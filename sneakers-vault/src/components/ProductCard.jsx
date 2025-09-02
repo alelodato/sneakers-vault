@@ -7,7 +7,7 @@ import SizePicker from "./SizePicker";
 
 export default function ProductCard({ p }) {
   const { add: addToCart /* o addToCart */ } = useCart();
-  const { toggle: addToWishlist /* o addToWishlist, has */ } = useWishlist();
+  const { has, toggle: addToWishlist /* o addToWishlist, has */ } = useWishlist();
 
   const [size, setSize] = useState(null);
   const [msg, setMsg] = useState("");
@@ -69,7 +69,7 @@ export default function ProductCard({ p }) {
             e.stopPropagation();
             const needSize = Array.isArray(p.sizes) && p.sizes.length > 0;
             if (needSize && !size) {
-              setMsg("Seleziona la taglia");
+              setMsg("Choose a Size");
               return;
             }
             addToCart(p, 1, size || null);
@@ -91,7 +91,8 @@ export default function ProductCard({ p }) {
           aria-label="Add to wishlist"
           title="Add to wishlist"
         >
-          <i className="fa-regular fa-heart" />
+          <i className={`fa-regular fa-heart ${
+            has(p.id) ? styles.heartOn : styles.heartOff}`} />
         </button>
       </div>
     </article>
