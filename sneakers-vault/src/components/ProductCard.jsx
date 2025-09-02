@@ -7,7 +7,8 @@ import SizePicker from "./SizePicker";
 
 export default function ProductCard({ p }) {
   const { add: addToCart /* o addToCart */ } = useCart();
-  const { has, toggle: addToWishlist /* o addToWishlist, has */ } = useWishlist();
+  const { has, toggle: addToWishlist /* o addToWishlist, has */ } =
+    useWishlist();
 
   const [size, setSize] = useState(null);
   const [msg, setMsg] = useState("");
@@ -15,12 +16,12 @@ export default function ProductCard({ p }) {
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!size) {
+    const needSize = Array.isArray(p.sizes) && p.sizes.length > 0;
+    if (needSize && !size) {
       setMsg("Choose a Size");
       return;
     }
-    setMsg("");
-    addToCart(p, 1, size);
+    addToCart(p, 1, size || null);
   };
 
   const handleWishlist = (e) => {
@@ -64,16 +65,7 @@ export default function ProductCard({ p }) {
         <button
           type="button"
           className={styles.iconBtn}
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const needSize = Array.isArray(p.sizes) && p.sizes.length > 0;
-            if (needSize && !size) {
-              setMsg("Choose a Size");
-              return;
-            }
-            addToCart(p, 1, size || null);
-          }}
+          onClick={handleAddToCart}
           aria-label="Add to cart"
           title="Add to cart"
         >
@@ -83,16 +75,15 @@ export default function ProductCard({ p }) {
         <button
           type="button"
           className={styles.iconBtn}
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            addToWishlist(p);
-          }}
+          onClick={handleWishlist}
           aria-label="Add to wishlist"
           title="Add to wishlist"
         >
-          <i className={`fa-solid fa-heart ${
-            has(p.id) ? styles.heartOn : styles.heartOff}`} />
+          <i
+            className={`fa-solid fa-heart ${
+              has(p.id) ? styles.heartOn : styles.heartOff
+            }`}
+          />
         </button>
       </div>
     </article>
