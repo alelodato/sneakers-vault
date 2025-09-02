@@ -47,7 +47,7 @@ export default function ProductCard({ p }) {
       </Link>
 
       <div className={styles.row}>
-        <Link to={`/product/${p.slug || p.id}`} className={styles.title}>
+        <Link to={`/product/${p.slug}`} className={styles.title}>
           <h3>{p.title}</h3>
         </Link>
         <span className={styles.price}>€ {p.price.toFixed(2)}</span>

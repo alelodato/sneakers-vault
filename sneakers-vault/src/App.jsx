@@ -12,6 +12,7 @@ import NewArrivals from "./pages/NewArrivals";
 import Cart from "./pages/Shop";
 import Wishlist from "./pages/WishList";
 import './App.css'
+import ProductPage from "./pages/ProductPage";
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
       <Route path="/trend" element={<Trending />} />
       <Route path="/sale" element={<OnSale />} />
       <Route path="/new" element={<NewArrivals />} />
+      <Route path="/product/:slug" element={<ProductPage />} />
     </Routes>
     </>
   );
