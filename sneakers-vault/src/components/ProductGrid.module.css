@@ -1,0 +1,25 @@
+
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+}
+
+/*Media query for laptops and larger screens (992 and up)*/
+@media screen and (min-width: 992px) {
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+}
+
+/*Media query for computers,large laptops and upwards (1200px and higher)*/
+@media screen and (min-width: 1200px) {
+
+
+}
