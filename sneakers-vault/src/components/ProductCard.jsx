@@ -91,7 +91,7 @@ export default function ProductCard({ p }) {
           aria-label="Add to wishlist"
           title="Add to wishlist"
         >
-          <i className={`fa-regular fa-heart ${
+          <i className={`fa-solid fa-heart ${
             has(p.id) ? styles.heartOn : styles.heartOff}`} />
         </button>
       </div>

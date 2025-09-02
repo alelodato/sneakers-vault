@@ -71,7 +71,6 @@
 
 .cardIcons i {
   font-size: 1rem;
-  padding: 5px;
   color: #fff;
 }
 
@@ -79,7 +78,7 @@
 .iconBtn {
   border: 0;
   background: transparent;
-  padding: 6px;
+  padding: 5px;
   line-height: 1;
   cursor: pointer;
   border-radius: 8px;            /* per focus/hover piacevoli */
