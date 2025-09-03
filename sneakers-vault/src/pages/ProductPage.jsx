@@ -3,12 +3,15 @@ import { useState } from "react";
 import { products } from "../data/products";
 import { useCart } from "../contexts/CartContext";
 import { useWishlist } from "../contexts/WishListContext";
+import normalizeSizes from "../utils/sizes";
 import SizePicker from "../components/SizePicker";
 import styles from "./ProductPage.module.css";
 
 export default function ProductPage() {
   const { slug } = useParams();
-  const p = products.find((x) => x.slug === slug);
+  const p = products.find(x => x.slug === slug);
+  const sizes = normalizeSizes(p?.sizes);
+  const needSize = sizes.length > 0;
 
   const { add: addToCart } = useCart();
   const { has, toggle } = useWishlist();
@@ -24,8 +27,6 @@ export default function ProductPage() {
       </section>
     );
   }
-
-  const needSize = Array.isArray(p.sizes) && p.sizes.length > 0;
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -55,7 +56,7 @@ export default function ProductPage() {
           <h1 className={styles.title}>{p.title}</h1>
           {needSize && (
             <>
-              <SizePicker sizes={p.sizes} value={size} onChange={setSize} />
+              <SizePicker sizes={sizes} value={size} onChange={setSize} />
               {msg && <div className={styles.error}>{msg}</div>}
             </>
           )}
