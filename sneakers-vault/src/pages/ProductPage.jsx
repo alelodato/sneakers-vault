@@ -8,7 +8,7 @@ import styles from "./ProductPage.module.css";
 
 export default function ProductPage() {
   const { slug } = useParams();
-  const p = products.find(x => x.slug === slug);
+  const p = products.find((x) => x.slug === slug);
 
   const { add: addToCart } = useCart();
   const { has, toggle } = useWishlist();
@@ -28,47 +28,69 @@ export default function ProductPage() {
   const needSize = Array.isArray(p.sizes) && p.sizes.length > 0;
 
   const handleAddToCart = (e) => {
-    e.preventDefault(); e.stopPropagation();
-    if (needSize && !size) { setMsg("Scegli una taglia"); return; }
+    e.preventDefault();
+    e.stopPropagation();
+    if (needSize && !size) {
+      setMsg("Scegli una taglia");
+      return;
+    }
     setMsg("");
     addToCart(p, 1, size || null);
   };
 
   const handleWishlist = (e) => {
-    e.preventDefault(); e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
     toggle(p);
   };
 
   return (
     <section className={styles.page}>
-      <div className={styles.media}>
-        <img className={styles.img} src={p.image} alt={p.title} />
-        {p.hoverImage && <img className={styles.imgHover} src={p.hoverImage} alt={`${p.title} alt`} />}
-      </div>
-
-      <div className={styles.info}>
-        <h1 className={styles.title}>{p.title}</h1>
-        <div className={styles.priceRow}>
-          <span className={styles.price}>
-            € {(p.discount ? p.price * (1 - p.discount / 100) : p.price).toFixed(2)}
-          </span>
+      <div className={styles.coverText}>
+        <div className={styles.media}>
+          <img className={styles.img} src={p.image} alt={p.title} />
         </div>
 
-        {needSize && (
-          <>
-            <SizePicker sizes={p.sizes} value={size} onChange={setSize} />
-            {msg && <div className={styles.error}>{msg}</div>}
-          </>
-        )}
+        <div className={styles.info}>
+          <h1 className={styles.title}>{p.title}</h1>
+          {needSize && (
+            <>
+              <SizePicker sizes={p.sizes} value={size} onChange={setSize} />
+              {msg && <div className={styles.error}>{msg}</div>}
+            </>
+          )}
+          <div className={styles.priceRow}>
+            <span className={styles.price}>
+              €{" "}
+              {(p.discount
+                ? p.price * (1 - p.discount / 100)
+                : p.price
+              ).toFixed(2)}
+            </span>
+          </div>
+          <div className={styles.actions}>
+            <button
+              type="button"
+              className={styles.iconBtn}
+              onClick={handleAddToCart}
+              aria-label="Add to cart"
+            >
+              <i className="fa-solid fa-cart-shopping" />
+            </button>
 
-        <div className={styles.actions}>
-          <button type="button" className={styles.iconBtn} onClick={handleAddToCart} aria-label="Add to cart">
-            <i className="fa-solid fa-cart-shopping" />
-          </button>
-
-          <button type="button" className={styles.iconBtn} onClick={handleWishlist} aria-label="Add to wishlist">
-            <i className={`fa-solid fa-heart ${has(p.id) ? styles.heartOn : styles.heartOff}`} />
-          </button>
+            <button
+              type="button"
+              className={styles.iconBtn}
+              onClick={handleWishlist}
+              aria-label="Add to wishlist"
+            >
+              <i
+                className={`fa-solid fa-heart ${
+                  has(p.id) ? styles.heartOn : styles.heartOff
+                }`}
+              />
+            </button>
+          </div>
         </div>
       </div>
     </section>

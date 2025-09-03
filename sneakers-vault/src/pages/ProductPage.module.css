@@ -1,0 +1,90 @@
+.page {
+  background: url(../assets/img/shopBackground.jpg) no-repeat center
+    center/cover;
+  min-height: 100vh;
+}
+
+.coverText {
+  background: radial-gradient(rgba(0, 0, 0, 0.607));
+  padding: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img {
+  width: 600px;
+  height: 600px;
+  padding: 50px;
+}
+
+.imgHover {
+  width: 600px;
+  height: 600px;
+  padding: 50px;
+}
+
+.info {
+  margin: 50px 150px 0 0;
+  color: #fff;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.price {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.iconBtn {
+  border: 0;
+  background: transparent;
+  padding: 5px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 8px; /* per focus/hover piacevoli */
+  transition: transform 0.1s ease, background-color 0.15s ease,
+    opacity 0.15s ease;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.iconBtn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+.iconBtn:active {
+  transform: translateY(0);
+  opacity: 0.85;
+}
+.iconBtn:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+.error {
+  color: #d33;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* Stato cuore attivo (se lo usi) */
+.heartOn {
+  color: #e63946 !important;
+}
+.heartOff {
+  color: inherit;
+}
