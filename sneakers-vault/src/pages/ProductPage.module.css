@@ -6,7 +6,7 @@
 
 .coverText {
   background: radial-gradient(rgba(0, 0, 0, 0.607));
-  padding: 16px;
+  padding: 5px;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
@@ -14,24 +14,32 @@
 }
 
 .img {
-  width: 600px;
-  height: 600px;
-  padding: 50px;
-}
-
-.imgHover {
-  width: 600px;
-  height: 600px;
-  padding: 50px;
+  width: 200px;
+  height: 200px;
+  padding: 10px 10px 0 0;
 }
 
 .info {
-  margin: 50px 150px 0 0;
+  margin: 10px 0 0;
   color: #fff;
+  background: #888888c9;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 0.7rem;
+  text-align: center;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+}
+
+.price {
+  font-size: 0.6rem;
   text-align: center;
   font-family: "Oxanium", sans-serif;
   font-optical-sizing: auto;
@@ -39,8 +47,8 @@
   font-style: normal;
 }
 
-.price {
-  font-size: 2rem;
+.sizeGroupLabel {
+  font-size: 0.7rem;
   text-align: center;
   font-family: "Oxanium", sans-serif;
   font-optical-sizing: auto;
@@ -58,8 +66,7 @@
   transition: transform 0.1s ease, background-color 0.15s ease,
     opacity 0.15s ease;
   color: #fff;
-  font-size: 1.5rem;
-  padding: 10px;
+  font-size: 1rem;
 }
 
 .iconBtn:hover {
@@ -87,4 +94,58 @@
 }
 .heartOff {
   color: inherit;
+}
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+  .coverText {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+
+  .img {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+  }
+
+  .info {
+    margin: 20px 40px 0 0;
+    height: 400px;
+  }
+
+  .iconBtn {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}
+
+/*Media query for laptops and larger screens (992 and up)*/
+@media screen and (min-width: 992px) {
+  .img {
+    width: 450px;
+    height: 450px;
+    padding: 20px;
+  }
+
+  .info {
+    margin: 20px 80px 0 0;
+    height: 425px;
+  }
+}
+
+/*Media query for computers,large laptops and upwards (1200px and higher)*/
+@media screen and (min-width: 1200px) {
+  .img {
+    width: 600px;
+    height: 600px;
+    padding: 50px;
+  }
 }

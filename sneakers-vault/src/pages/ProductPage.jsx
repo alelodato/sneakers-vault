@@ -7,9 +7,11 @@ import normalizeSizes from "../utils/sizes";
 import SizePicker from "../components/SizePicker";
 import styles from "./ProductPage.module.css";
 
+const LABELS = { men: "Men", women: "Women", kids: "Kids" };
+
 export default function ProductPage() {
   const { slug } = useParams();
-  const p = products.find(x => x.slug === slug);
+  const p = products.find((x) => x.slug === slug);
   const sizes = normalizeSizes(p?.sizes);
   const needSize = sizes.length > 0;
 
@@ -27,6 +29,10 @@ export default function ProductPage() {
       </section>
     );
   }
+
+  const groups = ["men", "women", "kids"].filter(
+    (g) => Array.isArray(p.sizes?.[g]) && p.sizes[g].length > 0
+  );
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -54,12 +60,19 @@ export default function ProductPage() {
 
         <div className={styles.info}>
           <h1 className={styles.title}>{p.title}</h1>
-          {needSize && (
-            <>
-              <SizePicker sizes={sizes} value={size} onChange={setSize} />
-              {msg && <div className={styles.error}>{msg}</div>}
-            </>
-          )}
+          {groups.map((g) => (
+            <div key={g} className={styles.sizeGroup}>
+              <div className={styles.sizeGroupHeader}>
+                <span className={styles.sizeGroupLabel}>{LABELS[g]}</span>
+              </div>
+
+              <SizePicker
+                sizes={p.sizes[g]}
+                value={size?.group === g ? size.code : null}
+                onChange={(code) => setSize({ group: g, code })}
+              />
+            </div>
+          ))}
           <div className={styles.priceRow}>
             <span className={styles.price}>
               €{" "}
