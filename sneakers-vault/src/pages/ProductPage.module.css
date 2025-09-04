@@ -97,6 +97,20 @@
   cursor: pointer;
 }
 
+.addBtn:disabled {
+  color: #ffffff3a;
+}
+
+.addBtn:active {
+  transform: translateY(0);
+  opacity: 0.85;
+}
+
+.addBtn:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
 .error {
   color: #d33;
   font-size: 0.85rem;
@@ -142,7 +156,6 @@
 
 /*Media query for laptops and larger screens (992 and up)*/
 @media screen and (min-width: 992px) {
-
   .product {
     display: flex;
     flex-direction: row;
@@ -151,10 +164,13 @@
   .img {
     width: 450px;
     height: 450px;
+    padding: 10px;
   }
 
   .info {
     height: 425px;
+    padding: 10px;
+    margin-top: 10px;
   }
 }
 

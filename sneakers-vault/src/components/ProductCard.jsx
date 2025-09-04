@@ -65,16 +65,6 @@ export default function ProductCard({ p }) {
         <button
           type="button"
           className={styles.iconBtn}
-          onClick={handleAddToCart}
-          aria-label="Add to cart"
-          title="Add to cart"
-        >
-          <i className="fa-solid fa-cart-shopping" />
-        </button>
-
-        <button
-          type="button"
-          className={styles.iconBtn}
           onClick={handleWishlist}
           aria-label="Add to wishlist"
           title="Add to wishlist"
