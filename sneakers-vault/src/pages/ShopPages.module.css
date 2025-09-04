@@ -1,10 +1,10 @@
 .section {
-  background: url(../assets/img/shopBackground.jpg) no-repeat center
-    center/cover;
+  background: url(../assets/img/shopBackground.jpg) center
+    center/contain;
 }
 
 .coverTxt {
-  background: radial-gradient(rgba(0, 0, 0, 0.372));
+  background: radial-gradient(rgba(0, 0, 0, 0.45));
   padding: 16px;
 }
 
@@ -16,4 +16,61 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+
+.filterBtn {
+  background: none;
+  border: none;
+}
+
+.filterBtn i {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.filterBtn i:hover {
+  cursor: pointer;
+}
+
+.filters {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  z-index: 1000;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.filters h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+}
+
+.filters label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.filters input {
+  margin-right: 0.5rem;
 }

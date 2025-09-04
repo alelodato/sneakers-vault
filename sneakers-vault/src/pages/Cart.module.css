@@ -48,6 +48,7 @@
   padding: 0;
   display: grid;
   gap: 12px;
+  justify-items: center;
 }
 
 .cartItem {

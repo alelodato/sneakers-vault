@@ -1,28 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
-import { useCart } from "../contexts/CartContext";
 import { useWishlist } from "../contexts/WishListContext";
-import SizePicker from "./SizePicker";
 
 export default function ProductCard({ p }) {
-  const { add: addToCart /* o addToCart */ } = useCart();
-  const { has, toggle: addToWishlist /* o addToWishlist, has */ } =
+  const { has, toggle: addToWishlist } =
     useWishlist();
 
-  const [size, setSize] = useState(null);
-  const [msg, setMsg] = useState("");
-
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const needSize = Array.isArray(p.sizes) && p.sizes.length > 0;
-    if (needSize && !size) {
-      setMsg("Choose a Size");
-      return;
-    }
-    addToCart(p, 1, size || null);
-  };
+  if(!p) return null;
 
   const handleWishlist = (e) => {
     e.preventDefault();
@@ -52,14 +36,6 @@ export default function ProductCard({ p }) {
         </Link>
         <span className={styles.price}>€ {p.price.toFixed(2)}</span>
       </div>
-
-      {/* SIZE PICKER: disegna le pill e aggiorna "size" */}
-      {Array.isArray(p.sizes) && p.sizes.length > 0 && (
-        <>
-          <SizePicker sizes={p.sizes} value={size} onChange={setSize} />
-          {msg && <div className={styles.error}>{msg}</div>}
-        </>
-      )}
 
       <div className={styles.cardIcons}>
         <button
