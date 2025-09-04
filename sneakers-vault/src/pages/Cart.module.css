@@ -4,6 +4,10 @@
   background: url(../assets/img/shopBackground2.jpg) no-repeat center
     center/cover;
   min-height: 100vh;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .coverText {
@@ -75,6 +79,11 @@
   font-weight: 600;
 }
 
+.size {
+  color: #fff;
+  padding: 5px;
+}
+
 .cartPrice {
   font-size: 0.9rem;
   color: #ddd;
@@ -113,6 +122,10 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .removeBtn:hover {
@@ -130,10 +143,6 @@
   color: #fff;
   font-size: 1rem;
   text-align: center;
-  font-family: "Oxanium", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
 }
 
 .clearCheckoutBtn {
@@ -148,6 +157,10 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /*Media query for laptops and larger screens (992 and up)*/

@@ -23,15 +23,12 @@ export default function CartProvider({ children }) {
     }
   });
 
-  // persistenza
   useEffect(() => {
     localStorage.setItem(LS_KEY, JSON.stringify(items));
   }, [items]);
 
-  // === API ===
-  // add(product, qty = 1, size = null)
   const add = (product, qty = 1, size = null) => {
-    const key = keyOf(product.id, size);
+    const key = `${product.id}__$size || "nosize"}`;
     setItems((prev) => {
       const i = prev.findIndex((x) => x.key === key);
       if (i >= 0) {

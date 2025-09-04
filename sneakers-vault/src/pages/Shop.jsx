@@ -19,12 +19,12 @@ export default function Cart() {
       <div className={styles.coverText}>
         <h2>Cart</h2>
         <ul className={styles.cartList}>
-          {items.map(({ id, product, qty }) => {
+          {items.map(({ key, id, product, qty, size }) => {
             const price = product.discount
               ? product.price - (product.price * product.discount) / 100
               : product.price;
             return (
-              <li key={id} className={styles.cartItem}>
+              <li key={key} className={styles.cartItem}>
                 <img
                   src={product.image}
                   alt={product.title}
@@ -32,19 +32,24 @@ export default function Cart() {
                 />
                 <div>
                   <div className={styles.cartTitleItem}>{product.title}</div>
+                  {size && (
+                    <div className={styles.size}>
+                      Size: {typeof size === "string" ? size : size.code ?? ""}
+                    </div>
+                  )}
                   <div className={styles.cartPrice}>€ {price.toFixed(2)}</div>
                 </div>
                 <div className={styles.cartActions}>
-                  <button className={styles.cartBtn} onClick={() => dec(id)}>
+                  <button className={styles.cartBtn} onClick={() => dec(key)}>
                     -
                   </button>
                   <span className={styles.itemQuantity}>{qty}</span>
-                  <button className={styles.cartBtn} onClick={() => inc(id)}>
+                  <button className={styles.cartBtn} onClick={() => inc(key)}>
                     +
                   </button>
                   <button
                     className={styles.removeBtn}
-                    onClick={() => remove(id)}
+                    onClick={() => remove(key)}
                   >
                     Remove
                   </button>

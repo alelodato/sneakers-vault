@@ -97,7 +97,7 @@
   cursor: pointer;
 }
 
-.addBtn:disabled {
+.addBtnDisabled {
   color: #ffffff3a;
 }
 
@@ -111,13 +111,16 @@
   outline-offset: 2px;
 }
 
-.error {
-  color: #d33;
-  font-size: 0.85rem;
-  margin-top: 4px;
+.alert {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #fff;
 }
 
-/* Stato cuore attivo (se lo usi) */
+
+/* Stato cuore attivo*/
 .heartOn {
   color: #e63946 !important;
 }

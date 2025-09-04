@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { products } from "../data/products";
 import { useCart } from "../contexts/CartContext";
 import { useWishlist } from "../contexts/WishListContext";
@@ -20,6 +20,11 @@ export default function ProductPage() {
 
   const [size, setSize] = useState(null);
   const [msg, setMsg] = useState("");
+  const msgTimerRef = useRef(null);
+
+  useEffect(() => {
+    return () => clearTimeout(msgTimerRef.current);
+  }, []);
 
   if (!p) {
     return (
@@ -38,11 +43,15 @@ export default function ProductPage() {
     e.preventDefault();
     e.stopPropagation();
     if (needSize && !size) {
-      setMsg("Scegli una taglia");
+      setMsg("Choose a size");
+      clearTimeout(msgTimerRef.current);
+      msgTimerRef.current = setTimeout(() => setMsg(""), 1800);
       return;
     }
-    setMsg("");
     addToCart(p, 1, size || null);
+    setMsg("Item added to cart");
+    clearTimeout(msgTimerRef.current);
+    msgTimerRef.current = setTimeout(() => setMsg(""), 1800);
   };
 
   const handleWishlist = (e) => {
@@ -86,12 +95,17 @@ export default function ProductPage() {
             <div className={styles.actions}>
               <button
                 type="button"
-                className={styles.addBtn}
-                disabled={needSize && !size}
+                className={`${styles.addBtn} ${needSize && !size ? styles.addBtnDisabled : ""}`}
+                aria-disabled={needSize && !size}
                 onClick={handleAddToCart}
               >
                 Add to cart
               </button>
+              {msg && (
+                <div className={styles.alert} role="status" aria-live="polite">
+                  {msg}
+                </div>
+              )}
               <button
                 type="button"
                 className={styles.iconBtn}
