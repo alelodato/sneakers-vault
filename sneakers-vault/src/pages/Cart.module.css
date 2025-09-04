@@ -51,7 +51,7 @@
 }
 
 .cartItem {
-  display: grid;
+  display: block;
   grid-template-columns: 80px 1fr auto;
   gap: 12px;
   align-items: center;
@@ -161,6 +161,13 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+}
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+  .cartItem {
+    display: grid;
+  }
 }
 
 /*Media query for laptops and larger screens (992 and up)*/
