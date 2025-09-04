@@ -86,6 +86,14 @@ export default function ProductPage() {
             <div className={styles.actions}>
               <button
                 type="button"
+                className={styles.addBtn}
+                disabled={needSize && !size}
+                onClick={handleAddToCart}
+              >
+                Add to cart
+              </button>
+              <button
+                type="button"
                 className={styles.iconBtn}
                 onClick={handleWishlist}
                 aria-label="Add to wishlist"
@@ -95,14 +103,6 @@ export default function ProductPage() {
                     has(p.id) ? styles.heartOn : styles.heartOff
                   }`}
                 />
-              </button>
-              <button
-                type="button"
-                className={styles.addBtn}
-                disabled={needSize && !size}
-                onClick={handleAddToCart}
-              >
-                Add to cart
               </button>
             </div>
           </div>

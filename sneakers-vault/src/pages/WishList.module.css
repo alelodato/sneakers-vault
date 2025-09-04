@@ -33,9 +33,22 @@
   padding-top: 50px;
 }
 
+.cardDisplay {
+  display: block;
+}
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+  .cardDisplay {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 16px;
+  }
+}
+
 /*Media query for laptops and larger screens (992 and up)*/
 @media screen and (min-width: 992px) {
-    .wishlistTitle {
-        font-size: 3rem;
-    }
+  .wishlistTitle {
+    font-size: 3rem;
+  }
 }

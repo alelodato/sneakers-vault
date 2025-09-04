@@ -22,11 +22,7 @@ export default function Wishlist() {
       <div className={styles.coverText}>
         <h2 className={styles.wishlistTitle}>Wishlist</h2>
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, minmax(0,1fr))",
-            gap: 16,
-          }}
+          className={styles.cardDisplay}
         >
           {liked.map((p) => (
             <ProductCard key={p.id} p={p} />
