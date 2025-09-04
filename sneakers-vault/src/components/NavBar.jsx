@@ -6,7 +6,9 @@ export default function NavBar() {
         <header className={styles.header}>
             {/* Left: Menu + Search */}
             <div className={styles.left}>
-                <i class="fa-solid fa-bars" ></i>
+                <Link className={styles.link} to="/shop">
+                <i class="fa-solid fa-shop"></i>
+                </Link>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
@@ -19,7 +21,7 @@ export default function NavBar() {
                 <Link className={styles.link} to="/wish">
                 <i class="fa-regular fa-heart"></i>
                 </Link>
-                <Link className={styles.link} to="/shop">
+                <Link className={styles.link} to="/cart">
                 <i class="fa-solid fa-cart-shopping"></i>
                 </Link>
             </div>
