@@ -1,7 +1,13 @@
 import styles from "./NavBar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function NavBar() {
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
+
+    const openSearch = () => {
+        navigate({ pathname: "/", search: "?search=1" });
+    };
     return (
         <header className={styles.header}>
             {/* Left: Menu + Search */}
@@ -9,7 +15,10 @@ export default function NavBar() {
                 <Link className={styles.link} to="/shop">
                 <i class="fa-solid fa-shop"></i>
                 </Link>
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-magnifying-glass"
+                onClick={openSearch}>
+
+                </i>
             </div>
 
             {/* Center: Logo */}

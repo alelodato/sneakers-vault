@@ -2,6 +2,7 @@ import styles from "./Home.module.css";
 import ProductRotator from "../components/ProductRotator";
 import { products } from "../data/products";
 import { Link } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
 
 export default function Home() {
 
@@ -53,6 +54,7 @@ export default function Home() {
           <h4 className={styles.lang}>English <i class="fa-solid fa-angle-down"></i></h4>
         </div>
       </div>
+      <SearchBar />
     </>
   );
 }
