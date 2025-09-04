@@ -54,56 +54,57 @@ export default function ProductPage() {
   return (
     <section className={styles.page}>
       <div className={styles.coverText}>
-        <div className={styles.media}>
-          <img className={styles.img} src={p.image} alt={p.title} />
-        </div>
-
-        <div className={styles.info}>
-          <h1 className={styles.title}>{p.title}</h1>
-          {groups.map((g) => (
-            <div key={g} className={styles.sizeGroup}>
-              <div className={styles.sizeGroupHeader}>
-                <span className={styles.sizeGroupLabel}>{LABELS[g]}</span>
-              </div>
-
-              <SizePicker
-                sizes={p.sizes[g]}
-                value={size?.group === g ? size.code : null}
-                onChange={(code) => setSize({ group: g, code })}
-              />
-            </div>
-          ))}
-          <div className={styles.priceRow}>
-            <span className={styles.price}>
-              €{" "}
-              {(p.discount
-                ? p.price * (1 - p.discount / 100)
-                : p.price
-              ).toFixed(2)}
-            </span>
+        <div className={styles.product}>
+          <div className={styles.media}>
+            <img className={styles.img} src={p.image} alt={p.title} />
           </div>
-          <div className={styles.actions}>
-            <button
-              type="button"
-              className={styles.iconBtn}
-              onClick={handleAddToCart}
-              aria-label="Add to cart"
-            >
-              <i className="fa-solid fa-cart-shopping" />
-            </button>
 
-            <button
-              type="button"
-              className={styles.iconBtn}
-              onClick={handleWishlist}
-              aria-label="Add to wishlist"
-            >
-              <i
-                className={`fa-solid fa-heart ${
-                  has(p.id) ? styles.heartOn : styles.heartOff
-                }`}
-              />
-            </button>
+          <div className={styles.info}>
+            <h1 className={styles.title}>{p.title}</h1>
+            {groups.map((g) => (
+              <div key={g} className={styles.sizeGroup}>
+                <div className={styles.sizeGroupHeader}>
+                  <span className={styles.sizeGroupLabel}>{LABELS[g]}</span>
+                </div>
+
+                <SizePicker
+                  sizes={p.sizes[g]}
+                  value={size?.group === g ? size.code : null}
+                  onChange={(code) => setSize({ group: g, code })}
+                />
+              </div>
+            ))}
+            <div className={styles.priceRow}>
+              <span className={styles.price}>
+                €{" "}
+                {(p.discount
+                  ? p.price * (1 - p.discount / 100)
+                  : p.price
+                ).toFixed(2)}
+              </span>
+            </div>
+            <div className={styles.actions}>
+              <button
+                type="button"
+                className={styles.iconBtn}
+                onClick={handleWishlist}
+                aria-label="Add to wishlist"
+              >
+                <i
+                  className={`fa-solid fa-heart ${
+                    has(p.id) ? styles.heartOn : styles.heartOff
+                  }`}
+                />
+              </button>
+              <button
+                type="button"
+                className={styles.addBtn}
+                disabled={needSize && !size}
+                onClick={handleAddToCart}
+              >
+                Add to cart
+              </button>
+            </div>
           </div>
         </div>
       </div>

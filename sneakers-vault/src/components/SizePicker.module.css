@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   gap: 5px;
   margin: 2px 0 5px;
+  padding: 10px 0 10px 0;
 }
 .pill {
   padding: 6px 10px;
