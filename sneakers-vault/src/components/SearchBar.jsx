@@ -1,11 +1,11 @@
 // src/components/SearchBar.jsx
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { products } from "../data/products";
 import styles from "./SearchBar.module.css";
 
 export default function SearchBar() {
-  const [params, setParams] = useSearchParams();
+  const [params] = useSearchParams();
   const visible = params.get("search") === "1";
   const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ export default function SearchBar() {
     <div className={styles.backdrop} onClick={close}>
       <div className={styles.panel} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
-          <h3>Search products</h3>
+          <h3 className={styles.searchHeader}>Search products</h3>
           <button className={styles.close} onClick={close} aria-label="Close">×</button>
         </div>
 
@@ -55,8 +55,8 @@ export default function SearchBar() {
           />
 
           <div className={styles.row}>
-            <label>
-              Tag
+            <label >
+              <h3 className={styles.tag}>Item Type</h3>
               <select value={tag} onChange={(e) => setTag(e.target.value)}>
                 <option value="">All</option>
                 <option value="men">Men</option>
@@ -66,7 +66,7 @@ export default function SearchBar() {
             </label>
 
             <label>
-              Brand
+              <h3 className={styles.tag}>Brand</h3>
               <select value={brand} onChange={(e) => setBrand(e.target.value)}>
                 <option value="">All</option>
                 {brands.map(b => <option key={b} value={b}>{b}</option>)}

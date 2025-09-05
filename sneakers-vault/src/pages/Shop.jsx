@@ -1,9 +1,24 @@
 import { useState, useMemo } from "react";
 import { products } from "../data/products";
+import { useSearchParams } from "react-router-dom";
 import ProductGrid from "../components/ProductGrid";
 import styles from "./ShopPages.module.css";
 
 export default function Shop() {
+  const [searchParams] = useSearchParams();
+
+  const qParam = (searchParams.get("q") ?? "").toLowerCase();
+
+  const paramTags = (searchParams.get("tag") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  const paramBrands = (searchParams.get("brand") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
   const [showFilters, setShowFilters] = useState(false);
   const [selectedTags, setSelectedTags] = useState([]); // ["men","women","kids"]
   const [selectedBrands, setSelectedBrands] = useState([]); // ["Nike","Adidas",...]
@@ -20,25 +35,21 @@ export default function Shop() {
       prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand]
     );
 
-  // === FILTRO ===
-  const filteredProducts = useMemo(() => {
-    return products.filter((p) => {
-      // normalizzo: unisco category + tags (se esistono)
-      const allTags = [
-        p.category,
-        ...(Array.isArray(p.tags) ? p.tags : []),
-      ].filter(Boolean);
+  // === FILTER ===
+  const tagsToApply = selectedTags.length ? selectedTags : paramTags;
+  const brandsToApply = selectedBrands.length ? selectedBrands : paramBrands;
+  const filteredProducts = products.filter((p) => {
+  const titleMatch =
+    !qParam || p.title.toLowerCase().includes(qParam);
 
-      const tagMatch =
-        selectedTags.length === 0 ||
-        selectedTags.some((tag) => allTags.includes(tag));
+  const tagMatch =
+    tagsToApply.length === 0 || tagsToApply.some(t => p.tags?.includes(t));
 
-      const brandMatch =
-        selectedBrands.length === 0 || selectedBrands.includes(p.brand);
+  const brandMatch =
+    brandsToApply.length === 0 || brandsToApply.includes(p.brand);
 
-      return tagMatch && brandMatch;
-    });
-  }, [selectedTags, selectedBrands]);
+  return titleMatch && tagMatch && brandMatch;
+});
 
   // brand unici per i checkbox
   const brands = useMemo(
