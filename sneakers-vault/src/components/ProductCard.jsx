@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 import { useWishlist } from "../contexts/WishListContext";
+import { hasDiscount, discountedPrice } from "../utils/priceUtils";
 
 export default function ProductCard({ p }) {
-  const { has, toggle: addToWishlist } =
-    useWishlist();
+  const { has, toggle: addToWishlist } = useWishlist();
 
-  if(!p) return null;
+  if (!p) return null;
 
   const handleWishlist = (e) => {
     e.preventDefault();
@@ -34,7 +34,17 @@ export default function ProductCard({ p }) {
         <Link to={`/product/${p.slug}`} className={styles.title}>
           <h3>{p.title}</h3>
         </Link>
-        <span className={styles.price}>€ {p.price.toFixed(2)}</span>
+        {/* Price */}
+        <div className={styles.price}>
+          {hasDiscount(p) ? (
+            <>
+              <span className={styles.oldPrice}>€{p.price}</span>
+              <span className={styles.newPrice}>€{discountedPrice(p)}</span>
+            </>
+          ) : (
+            <span className={styles.newPrice}>€{p.price}</span>
+          )}
+        </div>
       </div>
 
       <div className={styles.cardIcons}>

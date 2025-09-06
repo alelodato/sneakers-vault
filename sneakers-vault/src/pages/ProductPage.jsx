@@ -5,6 +5,7 @@ import { useCart } from "../contexts/CartContext";
 import { useWishlist } from "../contexts/WishListContext";
 import normalizeSizes from "../utils/sizes";
 import SizePicker from "../components/SizePicker";
+import { hasDiscount, discountedPrice } from "../utils/priceUtils";
 import styles from "./ProductPage.module.css";
 
 const LABELS = { men: "Men", women: "Women", kids: "Kids" };
@@ -84,18 +85,25 @@ export default function ProductPage() {
               </div>
             ))}
             <div className={styles.priceRow}>
-              <span className={styles.price}>
-                €{" "}
-                {(p.discount
-                  ? p.price * (1 - p.discount / 100)
-                  : p.price
-                ).toFixed(2)}
-              </span>
+              <div className={styles.price}>
+                {hasDiscount(p) ? (
+                  <>
+                    <span className={styles.oldPrice}>€{p.price}</span>
+                    <span className={styles.newPrice}>
+                      €{discountedPrice(p)}
+                    </span>
+                  </>
+                ) : (
+                  <span className={styles.newPrice}>€{p.price}</span>
+                )}
+              </div>
             </div>
             <div className={styles.actions}>
               <button
                 type="button"
-                className={`${styles.addBtn} ${needSize && !size ? styles.addBtnDisabled : ""}`}
+                className={`${styles.addBtn} ${
+                  needSize && !size ? styles.addBtnDisabled : ""
+                }`}
                 aria-disabled={needSize && !size}
                 onClick={handleAddToCart}
               >

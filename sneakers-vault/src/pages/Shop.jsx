@@ -120,14 +120,14 @@ export default function Shop() {
   return (
     <section className={styles.section}>
       <div className={styles.coverTxt}>
+        <button
+          className={styles.filterBtn}
+          onClick={toggleFilter}
+          aria-label="Open filters"
+        >
+          <i className="fa fa-filter" />
+        </button>
         <div className={styles.header}>
-          <button
-            className={styles.filterBtn}
-            onClick={toggleFilter}
-            aria-label="Open filters"
-          >
-            <i className="fa fa-filter" />
-          </button>
           <h2 className={styles.title}>Shop The Vault</h2>
         </div>
 

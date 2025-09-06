@@ -54,9 +54,23 @@
   font-weight: 600;
   font-size: 0.7rem;
 }
+
 .price {
+  display: flex;
+  flex-direction: column;
   font-variant-numeric: tabular-nums;
 }
+
+.oldPrice,
+.newPrice {
+  padding: 5px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #ff0000;
+}
+
 .brand {
   color: #9aa3b2;
   font-size: 0.85rem;

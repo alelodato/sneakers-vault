@@ -26,6 +26,7 @@
 .info {
   color: #fff;
   background: #262b36e0;
+  height: auto;
   padding: 10px;
   border-radius: 10px;
   font-size: 1rem;
@@ -38,8 +39,18 @@
 }
 
 .price {
-  padding: 10px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.oldPrice,
+.newPrice {
+  padding: 5px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #ff0000;
 }
 
 .sizeGroupLabel {
