@@ -1,7 +1,6 @@
 .section {
-  background: url(../assets/img/shopBackground.jpg) center
-    center/contain;
-    min-height: 100vh;
+  background: url(../assets/img/shopBackground.jpg) center center/contain;
+  min-height: 100vh;
 }
 
 .coverTxt {
@@ -80,4 +79,22 @@
 
 .filters input {
   margin-right: 0.5rem;
+}
+
+.clearBtn {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: #171616;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: #fff;
+}
+
+.clearBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

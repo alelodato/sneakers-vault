@@ -14,7 +14,7 @@ export default function Shop() {
     new: "New arrivals",
   };
 
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const qParam = (searchParams.get("q") ?? "").toLowerCase();
 
@@ -33,6 +33,32 @@ export default function Shop() {
   const [selectedBrands, setSelectedBrands] = useState([]); // ["Nike","Adidas",...]
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
+  // true if at least a filter is active (UI o URL)
+  const hasActiveFilters =
+    selectedTags.length > 0 ||
+    selectedBrands.length > 0 ||
+    selectedColors.length > 0 ||
+    selectedSizes.length > 0 ||
+    !!searchParams.get("tag") ||
+    !!searchParams.get("brand") ||
+    !!searchParams.get("color") ||
+    !!searchParams.get("size");
+
+  // resets all filters (and URL)
+  const clearAll = () => {
+    setSelectedTags([]);
+    setSelectedBrands([]);
+    setSelectedColors([]);
+    setSelectedSizes([]);
+    setSearchParams((prev) => {
+      const p = new URLSearchParams(prev);
+      p.delete("tag");
+      p.delete("brand");
+      p.delete("color");
+      p.delete("size");
+      return p;
+    });
+  };
 
   const toggleFilter = () => setShowFilters((v) => !v);
 
@@ -169,6 +195,16 @@ export default function Shop() {
                 ))}
               </div>
             ))}
+            <button
+              type="button"
+              className={styles.clearBtn}
+              onClick={clearAll}
+              disabled={!hasActiveFilters}
+              aria-label="Clear all filters"
+              title="Clear all"
+            >
+              Clear all
+            </button>
           </div>
         )}
 
