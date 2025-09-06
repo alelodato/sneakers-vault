@@ -73,7 +73,7 @@ export default function Shop() {
 
         {showFilters && (
           <div className={styles.filters}>
-            <h3>Tags</h3>
+            <h3>Item Type</h3>
             {["men", "women", "kids"].map((tag) => (
               <label key={tag}>
                 <input
@@ -99,7 +99,6 @@ export default function Shop() {
           </div>
         )}
 
-        {/* QUI: passa l’array direttamente a ProductGrid */}
         <div className={styles.grid}>
           <ProductGrid items={filteredProducts} />
         </div>

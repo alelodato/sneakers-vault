@@ -6,6 +6,7 @@ export const products = [
     brand: "Nike",
     price: 270,
     tags: ["hot", "men"],
+    colors: ["Black"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 5 },
@@ -26,6 +27,7 @@ export const products = [
     brand: "adidas",
     price: 95,
     tags: ["new", "men"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 2 },
@@ -47,6 +49,7 @@ export const products = [
     price: 159,
     discount: 50,
     tags: ["sale", "men", "women"],
+    colors: ["Red"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 4 },
@@ -71,6 +74,7 @@ export const products = [
     brand: "Nike",
     price: 190,
     tags: ["hot", "men"],
+    colors: ["Black", "Red", "White"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 2 },
@@ -91,6 +95,7 @@ export const products = [
     brand: "Nike",
     price: 215,
     tags: ["hot", "women"],
+    colors: ["White", "Pink", "Blue"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 5 },
@@ -111,6 +116,7 @@ export const products = [
     brand: "Nike",
     price: 130,
     tags: ["new", "men", "women"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 5 },
@@ -135,6 +141,7 @@ export const products = [
     brand: "Nike",
     price: 219,
     tags: ["hot", "women"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 4 },
@@ -159,6 +166,7 @@ export const products = [
     brand: "Nike",
     price: 239,
     tags: ["new", "men"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 4 },
@@ -180,6 +188,7 @@ export const products = [
     price: 150,
     discount: 70,
     tags: ["sale", "men", "women"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 4 },
@@ -204,6 +213,7 @@ export const products = [
     brand: "adidas",
     price: 89,
     tags: ["new", "women"],
+    colors: ["White"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 4 },
@@ -224,6 +234,7 @@ export const products = [
     brand: "New Balance",
     price: 80,
     tags: ["new", "women"],
+    colors: ["White"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 3 },
@@ -244,6 +255,7 @@ export const products = [
     brand: "Lacoste",
     price: 110,
     tags: ["hot", "men"],
+    colors:["White"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 5 },
@@ -265,6 +277,7 @@ export const products = [
     price: 65,
     discount: 50,
     tags: ["sale", "women"],
+    colors: ["White", "Pink"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 3 },
@@ -286,6 +299,7 @@ export const products = [
     price: 198,
     discount: 30,
     tags: ["sale", "men"],
+    colors: ["Ivory"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 4 },
@@ -307,6 +321,7 @@ export const products = [
     price: 275,
     discount: 70,
     tags: ["sale", "women"],
+    colors: ["Beige"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 4 },
@@ -328,6 +343,7 @@ export const products = [
     brand: "adidas",
     price: 99,
     tags: ["hot", "men"],
+    colors: ["White", "Green"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 4 },
@@ -348,6 +364,7 @@ export const products = [
     brand: "adidas",
     price: 69,
     tags: ["hot", "men"],
+    colors: ["Blue", "White"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 3 },
@@ -369,6 +386,7 @@ export const products = [
     brand: "Nike",
     price: 105,
     tags: ["hot", "men"],
+    colors: ["White", "Orange"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 3 },
@@ -389,6 +407,7 @@ export const products = [
     brand: "adidas",
     price: 105,
     tags: ["new", "women"],
+    colors:["White"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 5 },
@@ -410,6 +429,7 @@ export const products = [
     price: 99,
     discount: 50,
     tags: ["sale", "women"],
+    colors: ["White"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 5 },
@@ -431,6 +451,7 @@ export const products = [
     brand: "Puma",
     price: 79,
     tags: ["new", "men"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 3 },
@@ -451,6 +472,7 @@ export const products = [
     brand: "Austin",
     price: 199,
     tags: ["hot", "men"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU40", us: 7.5, stock: 3 },
@@ -472,6 +494,7 @@ export const products = [
     brand: "Puma",
     price: 109,
     tags: ["new", "women"],
+    colors:["Grey", "White"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 4 },
@@ -493,6 +516,7 @@ export const products = [
     price: 99,
     discount: 30,
     tags: ["sale", "women"],
+    colors: ["White"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 4 },
@@ -513,6 +537,7 @@ export const products = [
     brand: "Puma",
     price: 70,
     tags: ["new", "men", "women"],
+    colors: ["White"],
     sizes: {
       men: [
         { code: "EU41", us: 8, stock: 3 },
@@ -537,6 +562,7 @@ export const products = [
     brand: "Puma",
     price: 40,
     tags: ["kids"],
+    colors: ["Blue"],
     sizes: {
       kids: [
         { code: "EU26", us: "9C", stock: 4 },
@@ -556,6 +582,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 80,
     tags: ["kids"],
+    colors: ["Navy", "Ivory"],
     sizes: {
       kids: [
         { code: "EU27", us: "9C", stock: 4 },
@@ -575,6 +602,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 80,
     tags: ["kids"],
+    colors: ["Pink"],
     sizes: {
       kids: [
         { code: "EU25", us: "8C", stock: 4 },
@@ -592,9 +620,10 @@ export const products = [
     id: "air-jordan-low-nero",
     slug: "air-jordan-low-nero",
     title: "Air Jordan Low Nero",
-    brand: "",
+    brand: "Air Jordan",
     price: 70,
     tags: ["kids"],
+    colors: ["Black"],
     sizes: {
       kids: [
         { code: "EU27", us: "9C", stock: 5 },
@@ -616,6 +645,7 @@ export const products = [
     brand: "Philippe Model",
     price: 199,
     tags: ["hot", "women"],
+    colors: ["White"],
     sizes: {
       women: [
         { code: "EU36", us: 5.5, stock: 4 },
@@ -636,6 +666,7 @@ export const products = [
     brand: "Ventela",
     price: 40,
     tags: ["kids"],
+    colors: ["Black"],
     sizes: {
       kids: [
         { code: "EU27", us: "9C", stock: 5 },
@@ -656,6 +687,7 @@ export const products = [
     brand: "Air Jordan",
     price: 70,
     tags: ["kids"],
+    colors: ["Blue"],
     sizes: {
       kids: [
         { code: "EU25", us: "8C", stock: 4 },
@@ -676,6 +708,7 @@ export const products = [
     brand: "Nike",
     price: 55,
     tags: ["kids"],
+    colors: ["White", "Orange"],
     sizes: {
       kids: [
         { code: "EU27", us: "9C", stock: 3 },
@@ -696,6 +729,7 @@ export const products = [
     brand: "Golden Goose",
     price: 100,
     tags: ["kids"],
+    colors: ["White"],
     sizes: {
       kids: [
         { code: "EU27", us: "9C", stock: 6 },
@@ -716,6 +750,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 80,
     tags: ["kids"],
+    colors: ["Pink"],
     sizes: {
       kids: [
         { code: "EU27", us: "9C", stock: 5 },
@@ -735,6 +770,7 @@ export const products = [
     brand: "Air Jordan",
     price: 60,
     tags: ["kids"],
+    colors: ["Red"],
     sizes: {
       kids: [
         { code: "EU28", us: "10C", stock: 6 },
@@ -755,6 +791,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 45,
     tags: ["kids"],
+    colors: ["Kaki"],
     sizes: {
       kids: [
         { code: "EU26", us: "9C", stock: 4 },
@@ -774,6 +811,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 50,
     tags: ["kids"],
+    colors: ["Blue"],
     sizes: {
       kids: [
         { code: "EU27", us: "10C", stock: 5 },
@@ -793,6 +831,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 70,
     tags: ["kids"],
+    colors: ["Black"],
     sizes: {
       kids: [
         { code: "EU26", us: "9C", stock: 3 },
@@ -812,6 +851,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 40,
     tags: ["kids"],
+    colors: ["Blue"],
     sizes: {
       kids: [
         { code: "EU28", us: "11C", stock: 4 },
@@ -831,6 +871,7 @@ export const products = [
     brand: "Stones And Bones",
     price: 70,
     tags: ["kids"],
+    colors: ["Pink"],
     sizes: {
       kids: [
         { code: "EU27", us: "10C", stock: 4 },

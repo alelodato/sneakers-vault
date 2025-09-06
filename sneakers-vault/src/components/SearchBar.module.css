@@ -1,7 +1,9 @@
 .backdrop {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.55);
-  display: grid; place-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: center;
   z-index: 1000;
   font-family: "Oxanium", sans-serif;
   font-optical-sizing: auto;
@@ -26,23 +28,43 @@
   background: #141414;
   color: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   padding: 16px;
 }
 
-.header { display:flex; align-items:center; justify-content:space-between; }
-.close { background:transparent; border:0; color:#fff; font-size:28px; cursor:pointer; }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.close {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
 
-.form { display: grid; gap: 12px; margin-top: 8px; }
-.form input, .form select {
+.form {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+.form input,
+.form select {
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid #2b2b2b;
-  background: #0f0f0f; color: #fff;
+  background: #0f0f0f;
+  color: #fff;
 }
 
-.row { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.row {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+}
 
 .submit {
   padding: 10px 14px;
