@@ -81,6 +81,22 @@
   margin-right: 0.5rem;
 }
 
+.closeFilterBtn {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.closeFilterBtn button {
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+}
+
+.closeFilterBtn:hover {
+  cursor: pointer;
+}
+
 .clearBtn {
   padding: 6px 10px;
   border: 1px solid #ccc;
@@ -98,5 +114,3 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-
-

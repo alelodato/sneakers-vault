@@ -133,6 +133,13 @@ export default function Shop() {
 
         {showFilters && (
           <div className={styles.filters}>
+            <button
+              className={styles.closeFilterBtn}
+              onClick={toggleFilter}
+              aria-label="close filters"
+            >
+              <i class="fa-solid fa-x"></i>
+            </button>
             <h3>Item Type</h3>
             {TAG_OPTIONS.map((tag) => (
               <label key={tag}>
