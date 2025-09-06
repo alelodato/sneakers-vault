@@ -25,6 +25,7 @@ export default function ProductCard({ p }) {
               className={styles.imgHover}
               src={p.hoverImage}
               alt={`${p.title} alt`}
+              loading="lazy"
             />
           )}
         </div>

@@ -66,7 +66,7 @@ export default function ProductPage() {
       <div className={styles.coverText}>
         <div className={styles.product}>
           <div className={styles.media}>
-            <img className={styles.img} src={p.image} alt={p.title} />
+            <img className={styles.img} src={p.image} alt={p.title} loading="lazy" />
           </div>
 
           <div className={styles.info}>
