@@ -32,6 +32,7 @@ export default function App() {
       <Route path="/sale" element={<OnSale />} />
       <Route path="/new" element={<NewArrivals />} />
       <Route path="/product/:slug" element={<ProductPage />} />
+      <Route path="/checkout" element={<CheckOut />} />
     </Routes>
     </>
   );

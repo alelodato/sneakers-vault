@@ -1,4 +1,5 @@
 import { useCart } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 import { startCheckout } from "../utils/checkout";
 import styles from "../pages/Cart.module.css";
 
@@ -68,6 +69,7 @@ export default function Cart() {
             <button className={styles.clearCheckoutBtn} onClick={clear}>
               Clear cart
             </button>
+            <Link to="/checkout" className={styles.link}>
             <button
               className={styles.clearCheckoutBtn}
               onClick={() =>
@@ -87,6 +89,7 @@ export default function Cart() {
             >
               Checkout
             </button>
+            </Link>
           </div>
         </div>
       </div>
