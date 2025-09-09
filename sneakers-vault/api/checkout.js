@@ -1,4 +1,3 @@
-// /api/checkout.js
 import Stripe from "stripe";
 
 export default async function handler(req, res) {
@@ -7,38 +6,43 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { items = [], deliveryFee = 0, meta = {} } = req.body;
+    const { items = [], delivery = {} } = req.body; 
     if (!items.length) return res.status(400).json({ error: "Empty cart" });
 
-    const stripe = new Stripe(process.env.VITE_STRIPE_SECRET_KEY);
+    const stripe = new Stripe(process.env.VITE_STRIPE_SECRET_KEY, { apiVersion: "2024-06-20" });
+    const baseUrl = process.env.VITE_PUBLIC_BASE_URL || "http://localhost:5173";
 
-    // Base URL (local o deploy) dedotta dalla request
-    const origin =
-      req.headers.origin ||
-      process.env.VITE_PUBLIC_BASE_URL ||
-      "http://localhost:5173";
+    // ricomputo lato server (non mi fido del client)
+    const DELIVERY_FEES = {
+      standard: 0,           // puoi cambiarlo
+      express: 990,          // €9.90 -> centesimi
+    };
+    const deliveryType = delivery?.type === "express" ? "express" : "standard";
+    const deliveryFee = DELIVERY_FEES[deliveryType];
 
-    // Mappa gli articoli del carrello
+    // line items prodotti
     const line_items = items.map((i) => ({
-      quantity: i.quantity ?? 1,
+      quantity: i.quantity,
       price_data: {
         currency: "eur",
-        unit_amount: Math.round((i.price ?? 0) * 100),
+        unit_amount: Math.round(i.price * 100), // i.price è già scontato lato client
         product_data: {
-          name: i.size ? `${i.name} · Size ${i.size}` : i.name,
+          name: i.size ? `${i.name} — Size ${i.size}` : i.name,
           images: i.image ? [i.image] : [],
         },
       },
     }));
 
-    // Eventuale costo consegna
+    // line item consegna (se > 0)
     if (deliveryFee > 0) {
       line_items.push({
         quantity: 1,
         price_data: {
           currency: "eur",
-          unit_amount: Math.round(deliveryFee * 100),
-          product_data: { name: "Delivery" },
+          unit_amount: deliveryFee,
+          product_data: {
+            name: deliveryType === "express" ? "Express delivery" : "Standard delivery",
+          },
         },
       });
     }
@@ -46,31 +50,24 @@ export default async function handler(req, res) {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items,
-      allow_promotion_codes: true,
+      success_url: `${baseUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/checkout/cancel`,
       billing_address_collection: "required",
-      // se vuoi raccogliere anche l'indirizzo di spedizione tramite Stripe:
-      // shipping_address_collection: { allowed_countries: ["IT", "SM", "VA"] },
-
-      success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/checkout/cancel`,
-
+      shipping_address_collection: { allowed_countries: ["IT", "SM", "VA", "FR", "DE", "ES"] },
+      allow_promotion_codes: true,
       metadata: {
-        fullName: meta.fullName || "",
-        email: meta.email || "",
-        phone: meta.phone || "",
-        address: meta.address || "",
-        zip: meta.zip || "",
-        city: meta.city || "",
-        country: meta.country || "",
-        deliveryDate: meta.deliveryDate || "",
-        deliverySlot: meta.deliverySlot || "", // es: "09:00–12:00"
-        deliveryOption: meta.deliveryOption || "standard", // standard | nextday
+        delivery_type: deliveryType,
+        delivery_date: delivery?.date || "",
+        delivery_time: delivery?.time || "",
+        // opzionale: JSON address/notes
+        address: delivery?.address ? JSON.stringify(delivery.address) : "",
+        note: delivery?.note || "",
       },
     });
 
-    return res.status(200).json({ id: session.id, url: session.url });
+    return res.status(200).json({ id: session.id });
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ error: "Stripe error", details: err.message });
+    return res.status(500).json({ error: "Stripe session error" });
   }
 }
