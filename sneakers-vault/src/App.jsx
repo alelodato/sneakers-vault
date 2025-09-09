@@ -24,7 +24,6 @@ export default function App() {
       <Route path="/shop" element={<Shop />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/wish" element={<Wishlist />} />
-      <Route path="/checkout" element={<CheckOut />} />
       <Route path="/men" element={<MenProducts />} />
       <Route path="/women" element={<WomenProducts />} />
       <Route path="/kids" element={<KidsProducts />} />
