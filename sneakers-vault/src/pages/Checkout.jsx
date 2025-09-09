@@ -106,7 +106,7 @@ export default function Checkout() {
       }
 
       const { url } = await res.json();
-      window.location.href = url; // redirect a Stripe
+      window.location.href = url; // redirect to Stripe
     } catch (err) {
       console.error(err);
       alert("There's been a problem redirecting you. Try later.");
