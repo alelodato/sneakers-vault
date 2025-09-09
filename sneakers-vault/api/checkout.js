@@ -6,21 +6,17 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Il frontend invia: { items: [...], delivery: {type, fee}, meta: {...} }
     const { items = [], delivery = {}, meta = {} } = req.body || {};
     if (!items.length) {
       return res.status(400).json({ error: "Empty cart" });
     }
 
-    // 🔑 Chiavi da env (solo lato server)
     const secretKey = process.env.STRIPE_SECRET_KEY;
-    const baseUrl = process.env.BASE_URL || "http://localhost:5173";
-
-    if (!secretKey) {
-      return res.status(500).json({ error: "Missing STRIPE_SECRET_KEY" });
-    }
+    if(!secretKey) return res.status(400).json({error:"Missing STRIPE_SECRET_KEY"});
 
     const stripe = new Stripe(secretKey);
+
+    const baseUrl = process.env.BASE_URL || (requestAnimationFrame.headers.origin ? req.headers.origin : "http://localhost:5173");
 
     // Line items dai prodotti del carrello
     const line_items = items.map((i) => ({

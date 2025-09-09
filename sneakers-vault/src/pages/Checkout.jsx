@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import getStripe from "../utils/getStripe";
 import { useCart } from "../contexts/CartContext";
 import styles from "./Checkout.module.css";
 
@@ -71,12 +70,6 @@ export default function Checkout() {
   // === CHECKOUT STRIPE ===
   const handlePay = async () => {
     if (!formOk) return;
-
-    const stripe = await getStripe();
-    if (!stripe) {
-        alert("Stripe non inizializzato: controlla la pusblishable key.");
-        return;
-    }
 
     const payload = {
       items: items.map(({ product, qty, size }) => ({
