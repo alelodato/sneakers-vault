@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import getStripe from "../utils/getStripe";
 import { useCart } from "../contexts/CartContext"; // <-- dove hai il context
-import styles from "./Checkout.module.css"; // opzionale, vedi snippet CSS sotto
+import styles from "./Checkout.module.css";
 
 // util per calcolare il prezzo scontato
 function getFinalPrice(p) {
