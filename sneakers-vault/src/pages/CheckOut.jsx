@@ -108,7 +108,7 @@ export default function Checkout() {
       window.location.href = url; // redireziona a Stripe Checkout
     } catch (err) {
       console.error(err);
-      alert("There's been a problem while trying to process your payment. Try later.");
+      alert("There's been a problem while trying redirecting you. Try later.");
     }
   };
 
@@ -150,7 +150,7 @@ export default function Checkout() {
                 />
               </label>
               <label>
-                Telefono (opz.)
+                Phone (opt.)
                 <input
                   type="tel"
                   value={phone}
@@ -184,7 +184,7 @@ export default function Checkout() {
                   <option value="">Choose a date</option>
                   {dates.map((d) => (
                     <option key={d} value={d}>
-                      {new Date(d).toLocaleDateString("it-IT", {
+                      {new Date(d).toLocaleDateString("en-EN", {
                         weekday: "long",
                         day: "2-digit",
                         month: "2-digit",
@@ -197,7 +197,7 @@ export default function Checkout() {
               <label>
                 Time
                 <select value={slot} onChange={(e) => setSlot(e.target.value)}>
-                  <option value="">Choose a time for your delivery</option>
+                  <option value="">Choose a time slot for your delivery</option>
                   {slots.map((s) => (
                     <option key={s} value={s}>
                       {s}
@@ -288,7 +288,7 @@ export default function Checkout() {
             </button>
 
             <p className={styles.note}>
-              Payment with Strip (Test mode).
+              Payment with Stripe (Test mode).
             </p>
 
             <Link className={styles.back} to="/cart">
