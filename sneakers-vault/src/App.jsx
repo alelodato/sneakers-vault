@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import Checkout from "./pages/Checkout";
+import Checkout from "./pages/Checkout.jsx";
 import MenProducts from "./pages/MenProducts";
 import WomenProducts from "./pages/WomenProducts";
 import KidsProducts from "./pages/KidsProducts";
