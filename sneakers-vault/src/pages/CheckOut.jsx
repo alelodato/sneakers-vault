@@ -73,17 +73,21 @@ export default function Checkout() {
     if (!formOk) return;
 
     const stripe = await getStripe();
+    if (!stripe) {
+        alert("Stripe non inizializzato: controlla la pusblishable key.");
+        return;
+    }
 
     const payload = {
       items: items.map(({ product, qty, size }) => ({
         name: product.title,
-        price: getFinalPrice(product), // già scontato se serve
+        price: getFinalPrice(product),
         quantity: qty,
         image: product.image,
         size,
       })),
       delivery: {
-        type: selectedDelivery, // ie. "standard" o "express"
+        type: selectedDelivery,
         fee: selectedDelivery === "express" ? 10 : 0,
       },
       meta: {
@@ -102,15 +106,17 @@ export default function Checkout() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error || "Checkout error");
       }
+
       const { url } = await res.json();
-      window.location.href = url;
+      window.location.href = url; // redirect a Stripe
     } catch (err) {
       console.error(err);
-      alert("There's been a problem while trying redirecting you. Try later.");
+      alert("There's been a problem redirecting you. Try later.");
     }
   };
 
@@ -119,7 +125,9 @@ export default function Checkout() {
       <section className={styles.section}>
         <div className={styles.coverTxt}>
           <h2>Your Cart is Empty</h2>
-          <Link to="/shop" className={styles.link}>Back to Shop</Link>
+          <Link to="/shop" className={styles.link}>
+            Back to Shop
+          </Link>
         </div>
       </section>
     );
