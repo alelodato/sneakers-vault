@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import CheckOut from "./pages/CheckOut";
+import Checkout from "./pages/Checkout";
 import MenProducts from "./pages/MenProducts";
 import WomenProducts from "./pages/WomenProducts";
 import KidsProducts from "./pages/KidsProducts";
@@ -32,7 +32,7 @@ export default function App() {
       <Route path="/sale" element={<OnSale />} />
       <Route path="/new" element={<NewArrivals />} />
       <Route path="/product/:slug" element={<ProductPage />} />
-      <Route path="/checkout" element={<CheckOut />} />
+      <Route path="/checkout" element={<Checkout />} />
     </Routes>
     </>
   );
