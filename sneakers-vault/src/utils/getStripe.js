@@ -3,7 +3,11 @@ import { loadStripe } from "@stripe/stripe-js";
 let stripePromise;
 export default function getStripe() {
   if (!stripePromise) {
-    stripePromise = loadStripe(import.meta.env.VITE_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+    const key = import.meta.env.VITE_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+    if (!key) {
+        console.error("Missing VITE_PUBLIC_STRIPE_PUBLISHABLE_KEY")
+        stripePromise = loadStripe(key);
+    }
   }
   return stripePromise;
 }

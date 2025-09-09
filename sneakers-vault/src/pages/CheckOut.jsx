@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import getStripe from "../utils/getStripe";
 import { useCart } from "../contexts/CartContext"; // <-- dove hai il context
 import styles from "./Checkout.module.css"; // opzionale, vedi snippet CSS sotto
@@ -14,7 +14,7 @@ const fmt = (n) =>
     n
   );
 
-// genera i prossimi 10 giorni (escludendo ieri)
+// generates the next 10 days for date pick
 function nextDays(n = 10) {
   const out = [];
   const base = new Date();
@@ -40,7 +40,7 @@ export default function Checkout() {
   const [zip, setZip] = useState("");
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("");
-  const [delivery, setDelivery] = useState("standard"); // standard | nextday
+  const [delivery] = useState("standard"); // standard | nextday
   const deliveryFee = delivery === "nextday" ? 10 : 0;
 
   const slots = ["09:00-12:00", "12:00-15:00", "15:00-18:00"];

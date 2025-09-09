@@ -1,3 +1,4 @@
+// /api/checkout.js
 import Stripe from "stripe";
 
 export default async function handler(req, res) {
@@ -6,42 +7,35 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { items = [], delivery = {} } = req.body; 
+    const { items = [], delivery = {}, meta = {} } = req.body; // <— aggiunto
     if (!items.length) return res.status(400).json({ error: "Empty cart" });
 
-    const stripe = new Stripe(process.env.VITE_STRIPE_SECRET_KEY, { apiVersion: "2024-06-20" });
-    const baseUrl = process.env.VITE_PUBLIC_BASE_URL || "http://localhost:5173";
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.VITE_STRIPE_SECRET_KEY);
+    const baseUrl = process.env.BASE_URL || process.env.VITE_PUBLIC_BASE_URL || "http://localhost:5173";
 
-    // ricomputo lato server (non mi fido del client)
-    const DELIVERY_FEES = {
-      standard: 0,           // puoi cambiarlo
-      express: 990,          // €9.90 -> centesimi
-    };
-    const deliveryType = delivery?.type === "express" ? "express" : "standard";
-    const deliveryFee = DELIVERY_FEES[deliveryType];
-
-    // line items prodotti
+    // line items dai prodotti del carrello
     const line_items = items.map((i) => ({
       quantity: i.quantity,
       price_data: {
         currency: "eur",
-        unit_amount: Math.round(i.price * 100), // i.price è già scontato lato client
+        unit_amount: Math.round(i.price * 100),
         product_data: {
-          name: i.size ? `${i.name} — Size ${i.size}` : i.name,
+          name: i.size ? `${i.name} · Size: ${typeof i.size === "string" ? i.size : i.size.code}` : i.name,
           images: i.image ? [i.image] : [],
         },
       },
     }));
 
-    // line item consegna (se > 0)
-    if (deliveryFee > 0) {
+    // linea extra per la consegna express, se presente
+    const fee = Number(delivery?.fee) || 0;
+    if (fee > 0) {
       line_items.push({
         quantity: 1,
         price_data: {
           currency: "eur",
-          unit_amount: deliveryFee,
+          unit_amount: Math.round(fee * 100),
           product_data: {
-            name: deliveryType === "express" ? "Express delivery" : "Standard delivery",
+            name: delivery?.type === "express" ? "Delivery (Express)" : "Delivery",
           },
         },
       });
@@ -52,22 +46,26 @@ export default async function handler(req, res) {
       line_items,
       success_url: `${baseUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/checkout/cancel`,
-      billing_address_collection: "required",
-      shipping_address_collection: { allowed_countries: ["IT", "SM", "VA", "FR", "DE", "ES"] },
       allow_promotion_codes: true,
+      billing_address_collection: "required",
+
+      // Metadati utili (li ritrovi nella Sessione/Payment Intent su Stripe)
       metadata: {
-        delivery_type: deliveryType,
-        delivery_date: delivery?.date || "",
-        delivery_time: delivery?.time || "",
-        // opzionale: JSON address/notes
-        address: delivery?.address ? JSON.stringify(delivery.address) : "",
-        note: delivery?.note || "",
+        delivery_type: delivery?.type || "standard",
+        delivery_fee: String(fee),
+        fullName: meta.fullName || "",
+        email: meta.email || "",
+        address: meta.address || "",
+        city: meta.city || "",
+        zip: meta.zip || "",
+        date: meta.date || "",
+        slot: meta.slot || "",
       },
     });
 
-    return res.status(200).json({ id: session.id });
+    return res.status(200).json({ url: session.url });
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ error: "Stripe session error" });
+    return res.status(500).json({ error: "Checkout error" });
   }
 }
