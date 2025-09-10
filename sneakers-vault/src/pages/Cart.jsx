@@ -1,6 +1,6 @@
 import { useCart } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
-import { startCheckout } from "../utils/checkout";
+import { createCheckoutSession } from "../utils/checkoutUtils";
 import styles from "../pages/Cart.module.css";
 
 export default function Cart() {
@@ -73,7 +73,7 @@ export default function Cart() {
             <button
               className={styles.clearCheckoutBtn}
               onClick={() =>
-                startCheckout(
+                createCheckoutSession(
                   items.map(({ key, product, qty, size }) => ({
                     id: key,
                     name: product.title,
