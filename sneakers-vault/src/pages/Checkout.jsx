@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 import styles from "./Checkout.module.css";
 
-// util per calcolare il prezzo scontato
+
 function getFinalPrice(p) {
   return p.discount ? p.price * (1 - p.discount / 100) : p.price;
 }
-// util per formattare €
+
 const fmt = (n) =>
   new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(
     n
@@ -39,8 +39,7 @@ export default function Checkout() {
   const [zip, setZip] = useState("");
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("");
-  const [delivery] = useState("standard"); // standard | nextday
-  const deliveryFee = delivery === "nextday" ? 10 : 0;
+  const deliveryFee = selectedDelivery === "nextday" ? 10 : 0;
 
   const slots = ["09:00-12:00", "12:00-15:00", "15:00-18:00"];
   const dates = nextDays(10);
