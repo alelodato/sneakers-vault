@@ -1,32 +1,21 @@
-import express from 'express';
-import Stripe from 'stripe';
-import dotenv from 'dotenv';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const createCheckoutSession = require('./routes/create-checkout-session');
 
 dotenv.config();
-const app = express();
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-app.post('/api/create-checkout-session', async (req, res) => {
-  const { items } = req.body;
+// Route per Stripe Checkout
+app.use('/api/create-checkout-session', createCheckoutSession);
 
-  try {
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: items,
-      mode: 'payment',
-      success_url: 'http://localhost:5173/success',
-      cancel_url: 'http://localhost:5173/cancel',
-    });
-
-    res.json({ url: session.url });
-  } catch (error) {
-    console.error('Errore Stripe:', error.message);
-    res.status(500).json({ error: error.message });
-  }
+// Porta del server
+const PORT = process.env.PORT || 4242;
+app.listen(PORT, () => {
+  console.log(`✅ Backend Stripe attivo su http://localhost:${PORT}`);
 });
-
-app.listen(4242, () => console.log('✅ Backend Stripe attivo su http://localhost:4242'));

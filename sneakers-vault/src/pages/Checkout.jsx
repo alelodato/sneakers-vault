@@ -94,7 +94,7 @@ export default function Checkout() {
       },
     };
     try {
-      const res = await fetch("/api/checkout", {
+      const res = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

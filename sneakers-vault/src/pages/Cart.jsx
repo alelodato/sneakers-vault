@@ -70,25 +70,31 @@ export default function Cart() {
               Clear cart
             </button>
             <Link to="/checkout" className={styles.link}>
-            <button
-              className={styles.clearCheckoutBtn}
-              onClick={() =>
-                createCheckoutSession(
-                  items.map(({ key, product, qty, size }) => ({
-                    id: key,
-                    name: product.title,
-                    price: product.discount
-                      ? product.price - (product.price * product.discount) / 100
-                      : product.price,
-                    quantity: qty,
-                    image: product.image,
-                    size,
-                  }))
-                )
-              }
-            >
-              Checkout
-            </button>
+              <button
+                className={styles.clearCheckoutBtn}
+                onClick={() =>
+                  createCheckoutSession(
+                    items.map(({ product, qty, size }) => ({
+                      price_data: {
+                        currency: "eur",
+                        product_data: {
+                          name: `${product.title} - Size: ${size}`,
+                        },
+                        unit_amount:
+                          Math.round(
+                            product.discount
+                              ? product.price -
+                                  (product.price * product.discount) / 100
+                              : product.price
+                          ) * 100,
+                      },
+                      quantity: qty,
+                    }))
+                  )
+                }
+              >
+                Checkout
+              </button>
             </Link>
           </div>
         </div>
