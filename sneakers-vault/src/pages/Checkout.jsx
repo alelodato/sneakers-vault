@@ -129,7 +129,6 @@ export default function Checkout() {
     <section className={styles.section}>
       <div className={styles.coverText}>
         <div className={styles.layout}>
-          {/* COLONNA SINISTRA: FORM */}
           <div className={styles.col}>
             <h2 className={styles.title}>Order Summary</h2>
 
