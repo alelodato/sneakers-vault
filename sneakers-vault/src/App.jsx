@@ -3,9 +3,6 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Checkout from "./pages/Checkout.jsx";
-import MenProducts from "./pages/MenProducts";
-import WomenProducts from "./pages/WomenProducts";
-import KidsProducts from "./pages/KidsProducts";
 import OnSale from "./pages/OnSale";
 import Trending from "./pages/Trending";
 import NewArrivals from "./pages/NewArrivals";
@@ -25,9 +22,6 @@ export default function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wish" element={<Wishlist />} />
-        <Route path="/men" element={<MenProducts />} />
-        <Route path="/women" element={<WomenProducts />} />
-        <Route path="/kids" element={<KidsProducts />} />
         <Route path="/trend" element={<Trending />} />
         <Route path="/sale" element={<OnSale />} />
         <Route path="/new" element={<NewArrivals />} />

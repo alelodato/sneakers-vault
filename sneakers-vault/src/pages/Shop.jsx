@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { products } from "../data/products";
 import { useSearchParams } from "react-router-dom";
 import ProductGrid from "../components/ProductGrid";
@@ -116,6 +116,14 @@ export default function Shop() {
     () => [...new Set(products.flatMap((p) => p.colors || []))],
     []
   );
+
+  useEffect(() => {
+    setSelectedTags(paramTags);
+  }, [paramTags]);
+
+  useEffect(() => {
+    setSelectedBrands(paramBrands);
+  }, [paramBrands]);
 
   return (
     <section className={styles.section}>
