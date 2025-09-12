@@ -13,18 +13,6 @@ const fmt = (n) =>
     n
   );
 
-// generates the next 10 days for date pick
-function nextDays(n = 10) {
-  const out = [];
-  const base = new Date();
-  for (let i = 1; i <= n; i++) {
-    const d = new Date(base);
-    d.setDate(base.getDate() + i);
-    out.push(d.toISOString().slice(0, 10)); // yyyy-mm-dd
-  }
-  return out;
-}
-
 export default function Checkout() {
   const [selectedDelivery, setSelectedDelivery] = useState("standard");
   const { items } = useCart(); // items: [{ key, product, qty, size }]
@@ -37,12 +25,10 @@ export default function Checkout() {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [zip, setZip] = useState("");
-  const [date, setDate] = useState("");
   const [slot, setSlot] = useState("");
   const deliveryFee = selectedDelivery === "nextday" ? 10 : 0;
 
   const slots = ["09:00-12:00", "12:00-15:00", "15:00-18:00"];
-  const dates = nextDays(10);
 
   // === TOTALE ===
   const subtotal = useMemo(
@@ -63,7 +49,6 @@ export default function Checkout() {
     address.trim() &&
     city.trim() &&
     zip.trim() &&
-    date &&
     slot;
 
   // === CHECKOUT STRIPE ===
@@ -88,7 +73,6 @@ export default function Checkout() {
         address,
         city,
         zip,
-        date,
         slot,
       },
     };
@@ -182,25 +166,6 @@ export default function Checkout() {
             <div className={styles.card}>
               <h3>Delivery</h3>
               <div className={styles.grid2}>
-                <label>
-                  Date
-                  <select
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                  >
-                    <option value="">Choose a date</option>
-                    {dates.map((d) => (
-                      <option key={d} value={d}>
-                        {new Date(d).toLocaleDateString("en-EN", {
-                          weekday: "long",
-                          day: "2-digit",
-                          month: "2-digit",
-                        })}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-
                 <label>
                   Time
                   <select
