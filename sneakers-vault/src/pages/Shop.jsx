@@ -118,12 +118,19 @@ export default function Shop() {
   );
 
   useEffect(() => {
-    setSelectedTags(paramTags);
-  }, [paramTags]);
-
-  useEffect(() => {
-    setSelectedBrands(paramBrands);
-  }, [paramBrands]);
+    setSelectedTags((prev) => {
+      const isSame =
+        prev.length === paramTags.length &&
+        prev.every((t) => paramTags.includes(t));
+      return isSame ? prev : paramTags;
+    });
+    setSelectedBrands((prev) => {
+      const isSame =
+        prev.length === paramBrands.length &&
+        prev.every((b) => paramBrands.includes(b));
+      return isSame ? prev : paramBrands;
+    });
+  }, [paramTags, paramBrands]);
 
   return (
     <section className={styles.section}>
