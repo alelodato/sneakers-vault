@@ -23,8 +23,8 @@ router.post('/', async (req, res) => {
         },
         quantity: item.quantity,
       })),
-      success_url: 'http://localhost:5173/success',
-      cancel_url: 'http://localhost:5173/cancel',
+      success_url: 'https://sneakers-vault-jet.vercel.app/success',
+      cancel_url: 'https://sneakers-vault-jet.vercel.app/cancel',
     });
 
     res.status(200).json({ url: session.url });
