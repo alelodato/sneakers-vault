@@ -44,13 +44,13 @@ export default function Contact() {
 
           <h3>{t("contact.follow")}</h3>
           <div className={styles.socialIcons}>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
               <FaTwitter />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.threads.com/" target="_blank" rel="noopener noreferrer">
               <FaThreads />
             </a>
           </div>
