@@ -60,6 +60,12 @@
     "others": "Other Contacts",
     "phone": "Phone",
     "mail": "Email",
-    "follow": "Follow us on"
+    "follow": "Follow us on",
+    "success": "Message sent successfully!"
+
+  },
+
+  "alert": {
+    "alert":""
   }
 }

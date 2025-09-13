@@ -60,6 +60,7 @@
     "others": "Otros Contactos",
     "phone": "Teléfono",
     "mail": "Correo",
-    "follow": "Síguenos en"
+    "follow": "Síguenos en",
+    "success": "¡Mensaje enviado con éxito!"
   }
 }

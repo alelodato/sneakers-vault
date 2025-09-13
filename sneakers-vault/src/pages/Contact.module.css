@@ -20,7 +20,7 @@
 }
 
 .title {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .contactForm {
@@ -60,5 +60,16 @@
 }
 
 .socialIcons a {
-    color: #fff;
+  color: #fff;
+}
+
+.alert {
+  font-weight: bold;
+  background: black;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  color: #fff;
 }

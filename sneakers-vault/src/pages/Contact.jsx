@@ -1,16 +1,29 @@
-import styles from "./Contact.module.css";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaInstagram, FaTwitter, FaThreads } from "react-icons/fa6";
+import styles from "./Contact.module.css";
 
 export default function Contact() {
   const { t } = useTranslation();
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setSuccessMessage(t("contact.success"));
+    setTimeout(() => setSuccessMessage(""), 5000);
+
+    // Pulisci il form se vuoi
+    e.target.reset();
+  };
 
   return (
     <div className={styles.contactPage}>
       <div className={styles.coverText}>
+        {successMessage && <div className={styles.alert}>{successMessage}</div>}
         <h2 className={styles.title}>{t("contact.title")}</h2>
 
-        <form className={styles.contactForm}>
+        <form className={styles.contactForm} onSubmit={handleSubmit}>
           <label>
             {t("contact.name")}
             <input
@@ -44,13 +57,21 @@ export default function Contact() {
 
           <h3>{t("contact.follow")}</h3>
           <div className={styles.socialIcons}>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram />
             </a>
             <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
               <FaTwitter />
             </a>
-            <a href="https://www.threads.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.threads.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaThreads />
             </a>
           </div>
