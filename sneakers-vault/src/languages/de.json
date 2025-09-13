@@ -11,6 +11,10 @@
     "lang": "Sprache"
   },
 
+  "wishlist": {
+    "empty": "Deine Wishlist ist leer."
+  },
+
   "cart": {
     "title": "Warenkorb",
     "empty": "Der Warenkorb ist leer.",
