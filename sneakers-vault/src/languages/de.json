@@ -1,10 +1,13 @@
 {
-    "home": {
-        "men":"MEN",
-        "women":"WOMEN",
-        "kids":"KIDS",
-        "more":"See More",
-        "contact":"Contact Us",
-        "lang":"Language"
-    }
+  "home": {
+    "men": "HERREN",
+    "women": "DAMEN",
+    "kids": "KINDER",
+    "trend": "🔥 DERZEIT AM BELIEBTESTEN 🔥",
+    "sale": "ARTIKEL IM ANGEBOT (BIS ZU 70%)",
+    "new": "NEUE ARTIKEL",
+    "more": "MEHR ANZEIGEN",
+    "contact": "Kontakt",
+    "lang": "Sprache"
+  }
 }
