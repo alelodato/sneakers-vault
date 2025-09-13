@@ -19,5 +19,28 @@
     "total": "Total: €",
     "clear": "Vaciar carrito",
     "checkout": "Finalizar compra"
+  },
+
+  "checkout": {
+    "empty": "Tu carrito está vacío",
+    "back": "Volver a la tienda",
+    "summary": "Resumen del pedido",
+    "infos": "Información de envío",
+    "name": "Nombre completo",
+    "phone": "Teléfono (opcional)",
+    "postal": "Código postal",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "delivery": "Entrega",
+    "time": "Hora",
+    "time2": "Elige un horario de entrega",
+    "options": "Opciones de entrega",
+    "standard": "Estándar (Gratis, 2-4 días)",
+    "express": "Exprés",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "payment": "Ir al pago",
+    "payment2": "Pago con Stripe (Modo de prueba).",
+    "back2": "⬅ Volver al carrito"
   }
 }

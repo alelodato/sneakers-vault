@@ -19,5 +19,28 @@
         "total":"Total: €",
         "clear":"Clear cart",
         "checkout":"Checkout"
+    },
+
+    "checkout": {
+        "empty":"Your Cart is Empty",
+        "back":"Back to Shop",
+        "summary":"Order Summary",
+        "infos":"Shipping Infos",
+        "name":"Full Name",
+        "phone":"Phone (opt.)",
+        "postal":"Postal Code",
+        "address":"Address",
+        "city":"City",
+        "delivery":"Delivery",
+        "time":"Time",
+        "time2":"Choose a time slot for your delivery",
+        "options":"Delivery Options",
+        "standard":"Standard (Free, 2–4 gg)",
+        "express":"Express",
+        "subtotal":"Subtotal",
+        "total":"Total",
+        "payment":"Go To Payment",
+        "payment2":"Payment with Stripe (Test mode).",
+        "back2":"← Back to Cart"
     }
 }

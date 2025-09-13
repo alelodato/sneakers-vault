@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 import styles from "./Checkout.module.css";
+import { useTranslation } from 'react-i18next';
 
 
 function getFinalPrice(p) {
@@ -14,6 +15,7 @@ const fmt = (n) =>
   );
 
 export default function Checkout() {
+  const { t } = useTranslation();
   const [selectedDelivery, setSelectedDelivery] = useState("standard");
   const { items } = useCart(); // items: [{ key, product, qty, size }]
   const cartIsEmpty = !items || items.length === 0;
@@ -41,7 +43,7 @@ export default function Checkout() {
   );
   const total = subtotal + deliveryFee;
 
-  // === VALIDAZIONE BASE ===
+  // === VALIDATION ===
   const formOk =
     !cartIsEmpty &&
     fullName.trim() &&
@@ -100,9 +102,9 @@ export default function Checkout() {
     return (
       <section className={styles.section}>
         <div className={styles.coverTxt}>
-          <h2>Your Cart is Empty</h2>
+          <h2>{t('checkout.empty')}</h2>
           <Link to="/shop" className={styles.link}>
-            Back to Shop
+            {t('checkout.back')}
           </Link>
         </div>
       </section>
@@ -114,13 +116,13 @@ export default function Checkout() {
       <div className={styles.coverText}>
         <div className={styles.layout}>
           <div className={styles.col}>
-            <h2 className={styles.title}>Order Summary</h2>
+            <h2 className={styles.title}>{t('checkout.summary')}</h2>
 
             <div className={styles.card}>
-              <h3>Shipping Infos</h3>
+              <h3>{t('checkout.infos')}</h3>
               <div className={styles.grid2}>
                 <label>
-                  Full Name
+                  {t('checkout.name')}
                   <input
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
@@ -135,7 +137,7 @@ export default function Checkout() {
                   />
                 </label>
                 <label>
-                  Phone (opt.)
+                  {t('checkout.phone')}
                   <input
                     type="tel"
                     value={phone}
@@ -143,18 +145,18 @@ export default function Checkout() {
                   />
                 </label>
                 <label>
-                  Postal Code
+                  {t('checkout.postal')}
                   <input value={zip} onChange={(e) => setZip(e.target.value)} />
                 </label>
                 <label className={styles.span2}>
-                  Address
+                  {t('checkout.address')}
                   <input
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                   />
                 </label>
                 <label className={styles.span2}>
-                  City
+                  {t('checkout.city')}
                   <input
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
@@ -164,16 +166,16 @@ export default function Checkout() {
             </div>
 
             <div className={styles.card}>
-              <h3>Delivery</h3>
+              <h3>{t('checkout.delivery')}</h3>
               <div className={styles.grid2}>
                 <label>
-                  Time
+                  {t('checkout.time')}
                   <select
                     value={slot}
                     onChange={(e) => setSlot(e.target.value)}
                   >
                     <option value="">
-                      Choose a time slot for your delivery
+                      {t('checkout.time2')}
                     </option>
                     {slots.map((s) => (
                       <option key={s} value={s}>
@@ -184,7 +186,7 @@ export default function Checkout() {
                 </label>
 
                 <fieldset className={styles.span2}>
-                  <legend>Delivery Options</legend>
+                  <legend>{t('checkout.options')}</legend>
                   <label className={styles.radio}>
                     <input
                       type="radio"
@@ -193,7 +195,7 @@ export default function Checkout() {
                       checked={selectedDelivery === "standard"}
                       onChange={(e) => setSelectedDelivery(e.target.value)}
                     />
-                    <span>Standard (Free, 2–4 gg)</span>
+                    <span>{t('checkout.standard')}</span>
                   </label>
                   <label className={styles.radio}>
                     <input
@@ -203,7 +205,7 @@ export default function Checkout() {
                       checked={selectedDelivery === "nextday"}
                       onChange={(e) => setSelectedDelivery(e.target.value)}
                     />
-                    <span>Express ( + {fmt(10)} )</span>
+                    <span>{t('checkout.express')} ( + {fmt(10)} )</span>
                   </label>
                 </fieldset>
               </div>
@@ -243,15 +245,15 @@ export default function Checkout() {
 
               <div className={styles.totals}>
                 <div>
-                  <span>Subtotal</span>
+                  <span>{t('checkout.subtotal')}</span>
                   <strong>{fmt(subtotal)}</strong>
                 </div>
                 <div>
-                  <span>Delivery</span>
+                  <span>{t('checkout.delivery')}</span>
                   <strong>{fmt(deliveryFee)}</strong>
                 </div>
                 <div className={styles.grand}>
-                  <span>Total</span>
+                  <span>{t('checkout.total')}</span>
                   <strong>{fmt(total)}</strong>
                 </div>
               </div>
@@ -263,13 +265,13 @@ export default function Checkout() {
                 aria-disabled={!formOk}
                 title={!formOk ? "Fill all form fields" : "Pay with Stripe"}
               >
-                Go To Payment
+                {t('checkout.payment')}
               </button>
 
-              <p className={styles.note}>Payment with Stripe (Test mode).</p>
+              <p className={styles.note}>{t('checkout.payment2')}</p>
 
               <Link className={styles.back} to="/cart">
-                ← Back to Cart
+                {t('checkout.back2')}
               </Link>
             </div>
           </aside>
