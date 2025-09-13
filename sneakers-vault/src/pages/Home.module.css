@@ -94,6 +94,11 @@ h3 {
   padding-bottom: 20px;
 }
 
+.contact:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /*Media query for tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
   .hometitle {

@@ -46,5 +46,20 @@
     "payment": "Vai al pagamento",
     "payment2": "Pagamento con Stripe (Modalità test).",
     "back2": "⬅ Torna al carrello"
+  },
+
+  "contact": {
+    "title": "CONTATTACI",
+    "name": "Nome",
+    "namePlaceholder": "Il tuo nome",
+    "email": "Email",
+    "emailPlaceholder": "La tua email",
+    "message": "Messaggio",
+    "messagePlaceholder": "Scrivi il tuo messaggio qui...",
+    "submit": "Invia Messaggio",
+    "others": "Altri Contatti",
+    "phone": "Telefono",
+    "mail": "Email",
+    "follow": "Seguici su"
   }
 }
