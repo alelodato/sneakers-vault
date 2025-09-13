@@ -4,6 +4,7 @@ import { products } from "../data/products";
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 export default function Home() {
   const hot = products.filter((p) => p.tags?.includes("hot"));
@@ -24,44 +25,44 @@ export default function Home() {
           </div>
           <div className={styles.homebuttons}>
             <Link to="/shop?tag=men">
-              <button {t('home.men')}>MEN</button>
+              <button >{t('home.men')}</button>
             </Link>
             <Link to="/shop?tag=women">
-              <button {t('home.men')}>WOMEN</button>
+              <button >{t('home.women')}</button>
             </Link>
             <Link to="/shop?tag=kids">
-              <button {t('home.men')}>KIDS</button>
+              <button >{t('home.kids')}</button>
             </Link>
           </div>
           {/* Rotatore con 3 prodotti */}
-          <h3 className={styles.hot} {t('home.trend')}>🔥HOTTEST ON THE MARKET🔥</h3>
+          <h3 className={styles.hot} >{t('home.trend')}</h3>
           <ProductRotator products={hot} />
           <Link className={styles.link} to="/trend">
-            <p className={styles.more} {t('home.more')}>
-              SEE MORE <i class="fa-regular fa-circle-right"></i>
+            <p className={styles.more} >
+              {t('home.more')} <i class="fa-regular fa-circle-right"></i>
             </p>
           </Link>
-          <h3 className={styles.sale} {t('home.sale')}>ITEMS ON SALE (UP TO 70%)</h3>
+          <h3 className={styles.sale} >{t('home.sale')}</h3>
           <ProductRotator products={onSale} />
           <Link className={styles.link} to="/sale">
-            <p className={styles.more} {t('home.more')}>
-              SEE MORE <i class="fa-regular fa-circle-right"></i>
+            <p className={styles.more} >
+              {t('home.more')} <i class="fa-regular fa-circle-right"></i>
             </p>
           </Link>
-          <h3 className={styles.sale} {t('home.new')}>NEW ARRIVALS</h3>
+          <h3 className={styles.sale} >{t('home.new')}</h3>
           <ProductRotator products={newArrivals} />
           <Link className={styles.link} to="/new">
-            <p className={styles.more} {t('home.more')}>
-              SEE MORE <i class="fa-regular fa-circle-right"></i>
+            <p className={styles.more} >
+              {t('home.more')} <i class="fa-regular fa-circle-right"></i>
             </p>
           </Link>
-          <h4 className={styles.contact} {t('home.contact')}>
+          <h4 className={styles.contact} >
             <Link className={styles.link} to={"Contact"}>
-              Contact Us
+              {t('home.contact')}
             </Link>
           </h4>
-          <h4 className={styles.lang} {t('home.lang')}>
-            English <i class="fa-solid fa-angle-down"></i>
+          <h4 className={styles.lang} >
+            {t('home.lang')}<LanguageSwitcher />
           </h4>
         </div>
       </div>

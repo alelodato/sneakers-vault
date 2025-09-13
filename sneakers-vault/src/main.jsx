@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './i18n/i18n';
+import './i18n.js';
 import { BrowserRouter } from 'react-router-dom';
 import CartProvider  from "./contexts/CartContext.jsx";
 import WishlistProvider from "./contexts/WishListContext.jsx";
