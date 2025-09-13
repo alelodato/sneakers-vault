@@ -9,5 +9,15 @@
     "more": "VER MÁS",
     "contact": "Contáctanos",
     "lang": "Idioma"
+  },
+
+  "cart": {
+    "title": "Carrito",
+    "empty": "El carrito está vacío.",
+    "size": "Talla",
+    "remove": "Eliminar",
+    "total": "Total: €",
+    "clear": "Vaciar carrito",
+    "checkout": "Finalizar compra"
   }
 }

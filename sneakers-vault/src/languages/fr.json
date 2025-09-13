@@ -9,5 +9,15 @@
     "more": "VOIR PLUS",
     "contact": "Contactez-nous",
     "lang": "Langue"
+  },
+
+  "cart": {
+    "title": "Panier",
+    "empty": "Le panier est vide.",
+    "size": "Taille",
+    "remove": "Supprimer",
+    "total": "Total : €",
+    "clear": "Vider le panier",
+    "checkout": "Passer à la caisse"
   }
 }

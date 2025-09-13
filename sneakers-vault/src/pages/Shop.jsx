@@ -106,7 +106,6 @@ export default function Shop() {
     return titleMatch && tagMatch && brandMatch && colorMatch && sizeMatch;
   });
 
-  // brand unici per i checkbox
   const brands = useMemo(
     () => [...new Set(products.map((p) => p.brand).filter(Boolean))],
     []

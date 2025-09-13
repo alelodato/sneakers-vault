@@ -2,16 +2,18 @@ import { useCart } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
 import { createCheckoutSession } from "../utils/checkoutUtils";
 import styles from "../pages/Cart.module.css";
+import { useTranslation } from 'react-i18next';
 
 export default function Cart() {
+  const { t } = useTranslation();
   const { items, inc, dec, remove, clear, totalPrice } = useCart();
 
   if (!items.length)
     return (
       <section className={styles.cartSection}>
         <div className={styles.coverText}>
-          <h2>Cart</h2>
-          <p className={styles.empty}>The cart is empty.</p>
+          <h2>{t('cart.title')}</h2>
+          <p className={styles.empty}>{t('cart.empty')}</p>
         </div>
       </section>
     );
@@ -19,7 +21,7 @@ export default function Cart() {
   return (
     <section className={styles.cartSection}>
       <div className={styles.coverText}>
-        <h2>Cart</h2>
+        <h2>{t('cart.title')}</h2>
         <ul className={styles.cartList}>
           {items.map(({ key, product, qty, size }) => {
             const price = product.discount
@@ -36,7 +38,7 @@ export default function Cart() {
                   <div className={styles.cartTitleItem}>{product.title}</div>
                   {size && (
                     <div className={styles.size}>
-                      Size: {typeof size === "string" ? size : size.code ?? ""}
+                      {t('cart.size')} {typeof size === "string" ? size : size.code ?? ""}
                     </div>
                   )}
                   <div className={styles.cartPrice}>€ {price.toFixed(2)}</div>
@@ -53,7 +55,7 @@ export default function Cart() {
                     className={styles.removeBtn}
                     onClick={() => remove(key)}
                   >
-                    Remove
+                    {t('cart.remove')}
                   </button>
                 </div>
               </li>
@@ -63,11 +65,11 @@ export default function Cart() {
 
         <div className={styles.priceClearCheckout}>
           <strong className={styles.price}>
-            Total: € {totalPrice.toFixed(2)}
+            {t('cart.total')} {totalPrice.toFixed(2)}
           </strong>
           <div style={{ display: "flex", gap: 8 }}>
             <button className={styles.clearCheckoutBtn} onClick={clear}>
-              Clear cart
+              {t('cart.clear')}
             </button>
             <Link to="/checkout" className={styles.link}>
               <button
@@ -93,7 +95,7 @@ export default function Cart() {
                   )
                 }
               >
-                Checkout
+                {t('cart.checkout')}
               </button>
             </Link>
           </div>

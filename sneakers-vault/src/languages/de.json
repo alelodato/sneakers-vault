@@ -9,5 +9,15 @@
     "more": "MEHR ANZEIGEN",
     "contact": "Kontakt",
     "lang": "Sprache"
+  },
+
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Der Warenkorb ist leer.",
+    "size": "Größe",
+    "remove": "Entfernen",
+    "total": "Gesamt: €",
+    "clear": "Warenkorb leeren",
+    "checkout": "Zur Kasse"
   }
 }
