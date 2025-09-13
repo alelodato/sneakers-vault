@@ -1,284 +1,256 @@
-# 👟 Sneakers Vault
+# Sneakers Vault – React + Express
 
-An interactive concept e-commerce platform for sneaker lovers — offering a playful user experience with randomized product displays, dynamic size selection, and a functional shopping cart system.
+## Project description
 
-![Sneakers Vault Screenshot](assets/images/screenshot.png)
+Sneakers Vault is an e-commerce platform dedicated to sneakers enthusiasts. It allows users to explore a wide range of sneakers, apply advanced filters, add products to cart, and complete purchases through a fully functional checkout process powered by Stripe. The frontend is built with React, and the backend with Express.
 
----
+[🔗 View live website here](https://sneakers-vault-jet.vercel.app)
 
-## 🚀 Live Demo
+![Responsive design](./src/assets/readme/mockup.png)
 
-[🔗 Visit Live Site](https://alelodato.github.io/sneakers-vault/)  
-*(Best viewed on desktop or larger screens)*
+## Table of Contents
 
----
+- [Project](#project)
+  - [Objective](#objective)
+  - [Site Users Goal](#site-users-goal)
+  - [Site Owners Goal](#site-owners-goal)
+  - [Project Management](#project-management)
+  - [User Stories](#user-stories)
 
-## 📌 Table of Contents
+- [User Experience (UX)](#user-experience-ux)
+  - [Wireframes](#wireframes)
+  - [Site Structure](#site-structure)
+  - [Design Choices](#design-choices)
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Pages](#-pages)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Testing](#-testing)
-- [Future Improvements](#-future-improvements)
-- [Contact](#-contact)
-- [License](#-license)
+- [Existing Features](#existing-features)
+  - [Navigation](#navigation)
+  - [Homepage](#homepage)
+  - [Shop Page](#shop-page)
+  - [Product Detail](#product-detail)
+  - [Cart](#cart)
+  - [Checkout](#checkout)
+  - [Success / Cancel Pages](#success-cancel-pages)
 
----
+- [Technologies Used](#technologies-used)
+  - [Languages](#languages)
+  - [Frameworks & Software](#frameworks--software)
+  - [Libraries](#libraries)
 
-## 🧩 Overview
+- [Testing](#testing)
+  - [Code Validation](#code-validation)
+  - [Manual Testing](#manual-testing)
+  - [Known Bugs](#known-bugs)
 
-**Sneakers Vault** is a frontend e-commerce prototype that simulates the experience of browsing and purchasing sneakers. It emphasizes dynamic product rendering, randomized size generation, and interactive UI features to provide a more engaging user experience.
-
-This project was built to showcase frontend skills in **JavaScript**, **CSS**, and **DOM manipulation**, and is part of my professional portfolio.
-
----
-
-## ✨ Features
-
-- 🎲 **Randomized Product Cards**  
-  Each visit generates a new set of sneaker cards with varied sizes and gender categories.
-
-- 👟 **Size Selector**  
-  Users must select a size before adding a product to the cart, with visual validation and feedback.
-
-- 🛒 **Cart Functionality**  
-  - Add items to the cart  
-  - Modify item quantity with `+` and `−` buttons  
-  - Remove items  
-  - View price and size information
-
-- 👶 **Support for Men, Women & Kids Sizes**  
-  Products are labeled according to gender and associated with valid size ranges.
-
-- 💬 **Feedback Messages**  
-  Real-time alerts guide the user experience (e.g. missing size, item added to cart).
-
-- 💻 **Responsive Design**  
-  Optimized layout for desktop and mobile devices.
+- [Deployment](#deployment)
+- [Credits](#credits)
 
 ---
 
-## 📄 Pages
+# **Project**
 
-### 🏠 Home Page (`index.html`)
+## Objective
 
-Displays:
+The objective of this project is to build a clean and modern e-commerce site for sneakers lovers. Users can browse products, apply filters, search by name or brand, view product details, and proceed to purchase. The Stripe Checkout integration provides a seamless and secure payment flow.
 
-- A random list of sneaker cards
-- Sizes and gender categories per product
-- Add-to-cart system (size selection required)
+## Site Users Goal
 
-### 🛍️ Cart Page (`cart.html`)
+- Discover the latest sneaker arrivals, promotions, and collections.
+- Use filters to find sneakers by brand, color, size, or tag.
+- View detailed product info and high-quality images.
+- Add items to cart and update/remove them before checkout.
+- Complete secure payments using Stripe Checkout.
 
-Includes:
+## Site Owners Goal
 
-- All added products (name, size, quantity)
-- Quantity adjustment (+ / −)
-- Item removal button
-- Total price (if implemented)
+The aim of the site owner is to provide an intuitive shopping experience tailored to sneaker fans, showcase curated collections, and manage orders efficiently.
 
-> Cart data is stored in memory (no persistent storage). On reload, contents reset.
+## Project Management
 
----
+### Github Project Board
 
-## 🛠️ Tech Stack
+A Kanban board was used to manage the project development through user stories and feature tracking.
 
-| Technology         | Description                               |
-|--------------------|-------------------------------------------|
-| **HTML5**          | Semantic structure of the UI              |
-| **CSS3**           | Custom styling and responsive layout      |
-| **Vanilla JavaScript** | Dynamic DOM updates, cart logic, random generators |
-| **GitHub Pages**   | Deployment and live demo hosting          |
+[GitHub Project Board](https://github.com/users/alelodato/projects)
 
----
+## User Stories
 
-## 🧱 Project Structure
-
-sneakers-vault/
-├── assets/
-│ ├── css/
-│ │ └── styles.css # Styling and layout
-│ ├── js/
-│ │ ├── main.js # Homepage logic (product cards, size selection, add to cart)
-│ │ ├── cart.js # Cart page logic (quantity, remove, UI updates)
-│ │ └── utils.js # Helper functions (random generators, size arrays, etc.)
-│ └── images/ # Product images, logos, screenshots
-├── index.html # Home page with product listing
-├── cart.html # Cart page with selected items
-└── README.md # Project documentation
-
+| Category   | As a... | I want to...                     | So that I can...                                           |
+|------------|---------|----------------------------------|------------------------------------------------------------|
+| Navigation | Visitor | View categories in homepage      | Quickly access men’s, women’s or kids’ sneakers           |
+| Products   | Visitor | View a grid of products          | Browse through the catalogue                              |
+| Products   | Visitor | Use filters (brand, size, tag)   | Find what I’m looking for more easily                     |
+| Products   | Visitor | Use search bar                   | Locate a product quickly                                  |
+| Cart       | User    | Add products to cart             | Save my selection before buying                           |
+| Cart       | User    | Update quantity or remove items  | Manage what I want to purchase                            |
+| Checkout   | User    | Choose delivery or pickup        | Decide how I want to receive my sneakers                  |
+| Checkout   | User    | Pay with Stripe                  | Complete purchase securely                                |
+| Checkout   | User    | Be redirected to success/cancel  | Receive confirmation of the order or retry payment        |
 
 ---
 
-## ⚙️ Installation
+# **User Experience (UX)**
 
-To run the project locally on your machine:
+## Wireframes
 
-1. Clone the repository:
+Wireframes were hand-sketched during planning. The layout was optimized for both desktop and mobile views following a mobile-first approach.
 
-git clone https://github.com/alelodato/sneakers-vault.git
+<details><summary><b>Wireframes</b></summary>
 
----
+![Mobile Wireframe](./src/assets/readme/mobile-wireframe.png)  
+![Desktop Wireframe](./src/assets/readme/desktop-wireframe.png)
 
-## 🧪 Testing
+</details><br/>
 
-All testing has been performed manually. Below are the test cases covered:
+## Site Structure
 
-| Test Case                                  | Expected Behavior                              | Status |
-| ------------------------------------------ | ---------------------------------------------- | ------ |
-| Home loads with random sneakers each time  | Products are randomized on each page load      | ✅      |
-| Click “Add to Cart” without selecting size | Block action + show alert message              | ✅      |
-| Select size then click “Add to Cart”       | Product is added to cart                       | ✅      |
-| Navigate to Cart page                      | Cart displays added products with correct data | ✅      |
-| Change quantity with “+” and “−” buttons   | Quantity updates immediately in cart           | ✅      |
-| Remove product from cart                   | Product disappears from cart                   | ✅      |
-| Reload home page                           | Different set of products and sizes appears    | ✅      |
-| Cart resets on page refresh                | Cart is emptied (no persistent storage)        | ✅      |
-| Responsive on mobile                       | Layout adjusts and remains functional          | ✅      |
-| Error handling (e.g. no size selected)     | Friendly alert shown to the user               | ✅      |
+- **Homepage:** Highlights promotions, new arrivals, and links to category pages (via filters).
+- **Shop Page:** Full list of sneakers with advanced filters and search.
+- **Product Page:** Displays details and allows user to add product to cart.
+- **Cart Page:** Lists all products added by user with quantity and total price.
+- **Checkout:** Stripe-hosted checkout page.
+- **Success / Cancel:** Order confirmation or payment error message.
 
+## Design Choices
 
-https://sneakers-vault-jet.vercel.app/
-
-An interactive concept e-commerce platform for sneaker lovers — offering a playful user experience with randomized product displays, dynamic size selection, and a functional shopping cart system.
-
-![Sneakers Vault Screenshot](assets/images/screenshot.png)
+- **Color Scheme:** Black & white with subtle tones of grey and vibrant accents for call-to-actions.
+- **Typography:** Clean sans-serif font for a modern and sharp look.
+- **Layout:** Grid-based product presentation, responsive navigation, mobile-friendly UI.
 
 ---
 
-## 🚀 Live Demo
+# **Existing Features**
 
-[🔗 Visit Live Site](https://alelodato.github.io/sneakers-vault/)  
-*(Best viewed on desktop or larger screens)*
+## Navigation
 
----
+- Responsive navbar with burger menu on mobile.
+- Quick links to Home, Shop, and Cart.
+- Category links redirect to `/shop` with predefined filters via query string.
 
-## 📌 Table of Contents
+## Homepage
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Pages](#-pages)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Testing](#-testing)
-- [Future Improvements](#-future-improvements)
-- [Contact](#-contact)
-- [License](#-license)
+- Carousel with featured products.
+- Sections for promotions, new arrivals, and highlighted items.
+- Category buttons for men, women, and kids — redirecting to `/shop?category=men`, etc.
 
----
+## Shop Page
 
-## 🧩 Overview
+- Product grid layout with image, name, and price.
+- Filter sidebar with:
+  - Brand
+  - Color
+  - Size
+  - Tags
+- Search bar for product name.
 
-**Sneakers Vault** is a frontend e-commerce prototype that simulates the experience of browsing and purchasing sneakers. It emphasizes dynamic product rendering, randomized size generation, and interactive UI features to provide a more engaging user experience.
+## Product Detail
 
-This project was built to showcase frontend skills in **JavaScript**, **CSS**, and **DOM manipulation**, and is part of my professional portfolio.
+- Image zoom on hover.
+- Title, description, price, available sizes.
+- Add to Cart functionality.
 
----
+## Cart
 
-## ✨ Features
+- Dynamic cart with update quantity and remove buttons.
+- Price total calculation in real-time.
+- Option to continue shopping or proceed to checkout.
 
-- 🎲 **Randomized Product Cards**  
-  Each visit generates a new set of sneaker cards with varied sizes and gender categories.
+## Checkout
 
-- 👟 **Size Selector**  
-  Users must select a size before adding a product to the cart, with visual validation and feedback.
+- Stripe Checkout with delivery/pickup toggle before payment.
+- Stripe handles the payment securely.
+- Backend session creation via Express and Stripe SDK.
 
-- 🛒 **Cart Functionality**  
-  - Add items to the cart  
-  - Modify item quantity with `+` and `−` buttons  
-  - Remove items  
-  - View price and size information
+## Success / Cancel Pages
 
-- 👶 **Support for Men, Women & Kids Sizes**  
-  Products are labeled according to gender and associated with valid size ranges.
-
-- 💬 **Feedback Messages**  
-  Real-time alerts guide the user experience (e.g. missing size, item added to cart).
-
-- 💻 **Responsive Design**  
-  Optimized layout for desktop and mobile devices.
+- Success page confirms order and thanks the user.
+- Cancel page informs the user payment was not completed.
 
 ---
 
-## 📄 Pages
+# **Technologies Used**
 
-### 🏠 Home Page (`index.html`)
+## Languages
 
-Displays:
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- JSX
 
-- A random list of sneaker cards
-- Sizes and gender categories per product
-- Add-to-cart system (size selection required)
+## Frameworks & Software
 
-### 🛍️ Cart Page (`cart.html`)
+- React
+- Express.js (Node backend)
+- Stripe Checkout
+- Vite (React build tool)
+- Railway (Backend deployment)
+- Vercel (Frontend deployment)
+- GitHub (repo + project board)
+- Cloudinary (image hosting)
 
-Includes:
+## Libraries
 
-- All added products (name, size, quantity)
-- Quantity adjustment (+ / −)
-- Item removal button
-- Total price (if implemented)
-
-> Cart data is stored in memory (no persistent storage). On reload, contents reset.
-
----
-
-## 🛠️ Tech Stack
-
-| Technology         | Description                               |
-|--------------------|-------------------------------------------|
-| **HTML5**          | Semantic structure of the UI              |
-| **CSS3**           | Custom styling and responsive layout      |
-| **Vanilla JavaScript** | Dynamic DOM updates, cart logic, random generators |
-| **GitHub Pages**   | Deployment and live demo hosting          |
+- React Router
+- Stripe JS
+- Dotenv
+- Axios
+- React Icons
+- React Toastify
 
 ---
 
-## 🧱 Project Structure
+# **Testing**
 
-sneakers-vault/
-├── assets/
-│ ├── css/
-│ │ └── styles.css # Styling and layout
-│ ├── js/
-│ │ ├── main.js # Homepage logic (product cards, size selection, add to cart)
-│ │ ├── cart.js # Cart page logic (quantity, remove, UI updates)
-│ │ └── utils.js # Helper functions (random generators, size arrays, etc.)
-│ └── images/ # Product images, logos, screenshots
-├── index.html # Home page with product listing
-├── cart.html # Cart page with selected items
-└── README.md # Project documentation
+## Code Validation
 
+- HTML/CSS tested via W3C Validators.
+- ESLint used for JSX validation.
+
+## Manual Testing
+
+| Test | Result |
+|------|--------|
+| Visit homepage on desktop | ✅ |
+| Visit homepage on mobile | ✅ |
+| Click category links | ✅ Redirects with filter applied |
+| Filter products in shop | ✅ |
+| Search for product | ✅ |
+| Add/remove items from cart | ✅ |
+| Proceed to Stripe checkout | ✅ |
+| Complete a payment with Stripe | ✅ |
+| Try cancelling payment | ✅ Redirects to cancel page |
+| View cart persistence | ✅ |
+| Test responsiveness on all screen sizes | ✅ |
+
+## Known Bugs
+
+- No authentication system is implemented yet.
+- No admin dashboard or inventory management system.
+- Cart is stored in local state — no persistence on refresh.
+- No email confirmation yet (planned for future release).
 
 ---
 
-## ⚙️ Installation
+# **Deployment**
 
-To run the project locally on your machine:
+## Frontend
 
-1. Clone the repository:
+- Deployed on [Vercel](https://sneakers-vault-jet.vercel.app)
 
-git clone https://github.com/alelodato/sneakers-vault.git
+## Backend
+
+- Deployed on [Render](https://dashboard.render.com)
+- Uses environment variables for Stripe secret keys
+- `/create-checkout-session` handles checkout logic
+
+## Cloning Instructions
+
+1. Clone repo:  
+   `git clone https://github.com/alelodato/sneakers-vault`
+2. Install dependencies:  
+   `npm install`
+3. Run development server:  
+   `npm run dev`
 
 ---
 
-## 🧪 Testing
-
-All testing has been performed manually. Below are the test cases covered:
-
-| Test Case                                  | Expected Behavior                              | Status |
-| ------------------------------------------ | ---------------------------------------------- | ------ |
-| Home loads with random sneakers each time  | Products are randomized on each page load      | ✅      |
-| Click “Add to Cart” without selecting size | Block action + show alert message              | ✅      |
-| Select size then click “Add to Cart”       | Product is added to cart                       | ✅      |
-| Navigate to Cart page                      | Cart displays added products with correct data | ✅      |
-| Change quantity with “+” and “−” buttons   | Quantity updates immediately in cart           | ✅      |
-| Remove product from cart                   | Product disappears from cart                   | ✅      |
-| Reload home page                           | Different set of products and sizes appears    | ✅      |
-| Cart resets on page refresh                | Cart is emptied (no persistent storage)        | ✅      |
-| Responsive on mobile                       | Layout adjusts and remains functional          | ✅      |
-| Error handling (e.g. no size selected)     | Friendly alert shown to the user               | ✅      |
+All code written by **Alessio Lodato**.
