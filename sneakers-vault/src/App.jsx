@@ -20,7 +20,6 @@ export default function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />
@@ -33,6 +32,7 @@ export default function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
