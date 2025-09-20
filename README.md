@@ -1,19 +1,16 @@
-# Sneakers Vault – React + Express
-
-## Project description
-
-Sneakers Vault is an e-commerce platform dedicated to sneakers enthusiasts. It allows users to explore a wide range of sneakers, apply advanced filters, add products to cart, and complete purchases through a fully functional checkout process powered by Stripe. The frontend is built with React, and the backend with Express.
+# Sneakers Vault 👟
 
 [🔗 View live website here](https://sneakers-vault-jet.vercel.app)
 
-![Responsive design](./src/assets/readme/mockup.png)
+![Responsive design](./sneakers-vault/src/assets/img/readme/sneakers-responsive.png)
+
+---
 
 ## Table of Contents
 
 - [Project](#project)
   - [Objective](#objective)
-  - [Site Users Goal](#site-users-goal)
-  - [Site Owners Goal](#site-owners-goal)
+  - [User Goals](#user-goals)
   - [Project Management](#project-management)
   - [User Stories](#user-stories)
 
@@ -30,207 +27,232 @@ Sneakers Vault is an e-commerce platform dedicated to sneakers enthusiasts. It a
   - [Cart](#cart)
   - [Checkout](#checkout)
   - [Success / Cancel Pages](#success-cancel-pages)
+  - [Contact Page](#contact-page)
+  - [404 Page](#404-page)
 
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
   - [Frameworks & Software](#frameworks--software)
   - [Libraries](#libraries)
 
+- [Future Features](#future-features)
+
 - [Testing](#testing)
-  - [Code Validation](#code-validation)
-  - [Manual Testing](#manual-testing)
-  - [Known Bugs](#known-bugs)
 
 - [Deployment](#deployment)
+
 - [Credits](#credits)
 
 ---
 
-# **Project**
+# 🛠️ Project
 
-## Objective
+## 🎯 Objective
 
-The objective of this project is to build a clean and modern e-commerce site for sneakers lovers. Users can browse products, apply filters, search by name or brand, view product details, and proceed to purchase. The Stripe Checkout integration provides a seamless and secure payment flow.
+Sneakers Vault is a modern, responsive e-commerce website designed for sneaker lovers. It allows users to explore a curated selection of sneakers, filter by category or brand, view detailed product info, and complete purchases using Stripe Checkout.
 
-## Site Users Goal
+## 👥 User Goals
 
-- Discover the latest sneaker arrivals, promotions, and collections.
-- Use filters to find sneakers by brand, color, size, or tag.
-- View detailed product info and high-quality images.
-- Add items to cart and update/remove them before checkout.
-- Complete secure payments using Stripe Checkout.
+- Discover new arrivals and promotions
+- Use filters to easily find desired sneakers
+- Search by keyword or brand
+- View detailed product pages
+- Add items to cart and manage them
+- Choose between delivery or store pickup
+- Complete secure payments via Stripe
 
-## Site Owners Goal
+## 🎯 Site Owner Goals
 
-The aim of the site owner is to provide an intuitive shopping experience tailored to sneaker fans, showcase curated collections, and manage orders efficiently.
+- Provide a seamless, intuitive shopping experience
+- Highlight exclusive and trending sneakers
+- Manage orders and support multiple languages
+- Build a scalable foundation for future features
 
-## Project Management
+## 📋 Project Management
 
-### Github Project Board
+GitHub Projects board used to organize and track all tasks and user stories:
 
-A Kanban board was used to manage the project development through user stories and feature tracking.
-
-[GitHub Project Board](https://github.com/users/alelodato/projects)
-
-## User Stories
-
-| Category   | As a... | I want to...                     | So that I can...                                           |
-|------------|---------|----------------------------------|------------------------------------------------------------|
-| Navigation | Visitor | View categories in homepage      | Quickly access men’s, women’s or kids’ sneakers           |
-| Products   | Visitor | View a grid of products          | Browse through the catalogue                              |
-| Products   | Visitor | Use filters (brand, size, tag)   | Find what I’m looking for more easily                     |
-| Products   | Visitor | Use search bar                   | Locate a product quickly                                  |
-| Cart       | User    | Add products to cart             | Save my selection before buying                           |
-| Cart       | User    | Update quantity or remove items  | Manage what I want to purchase                            |
-| Checkout   | User    | Choose delivery or pickup        | Decide how I want to receive my sneakers                  |
-| Checkout   | User    | Pay with Stripe                  | Complete purchase securely                                |
-| Checkout   | User    | Be redirected to success/cancel  | Receive confirmation of the order or retry payment        |
+[🔗 GitHub Project Board](https://github.com/users/alelodato/projects/8)
 
 ---
 
-# **User Experience (UX)**
+## 🧑‍💻 User Stories
+
+
+| Category   | As a... | I want to...                        | So that I can...                                          |
+|------------|---------|-------------------------------------|-----------------------------------------------------------|
+| Homepage   | Developer | See my navbar, and homepage content rendering when website is loaded | Can see the homepage is the first page loaded when a user is opening the website and all content is shown properly|
+| Homepage   | User | Browse featured products            | Quickly see hot, new, and discounted items               |
+| Navbar | Developer | My navbar to be shown at the top of all the website pages, showing the shop logo in the center, shop and search icons on the left and wishlist and cart on the right.               | Is intuitive for Users and has an elegant display       |
+| Navbar | User | The navbar icons to be intuitive and to easily redirect me to: shop page, wishlist, and cart, with the search icon activating the filtered search when clicked.              | Can navigate the website easily       |
+| Navigation | User | Use category buttons                | Jump to filtered shop view for men, women, or kids       |
+| Products   | User | Apply filters by brand, color, size | Find what I’m looking for faster                         |
+| Products   | User | Search by keyword                   | Locate specific items                                     |
+| Cart       | User    | Add or remove items                 | Manage what I want to buy                                |
+| Cart       | User    | Update quantity and view total      | Keep track of my selections                              |
+| Checkout   | User    | Choose delivery or pickup           | Select preferred delivery method                         |
+| Checkout   | Developer   | Connect my website to Stripe using a backend server           | Can use the Stripe checkout services for user payments                              |
+| Checkout   | User    | Pay securely via Stripe             | Complete my purchase safely                              |
+| Wishlist  | User    |  Be able to store my favourite items in a wishlist              | Can pick the one i like the most in the shop and find them easily also at a later time.               |
+| Languages  | User    | Switch language easily              | Navigate the site in my preferred language               |
+
+---
+
+# 💡 User Experience (UX)
 
 ## Wireframes
 
-Wireframes were hand-sketched during planning. The layout was optimized for both desktop and mobile views following a mobile-first approach.
+Initial wireframes were sketched to guide layout decisions with a mobile-first approach.
 
 <details><summary><b>Wireframes</b></summary>
 
 ![Mobile Wireframe](./src/assets/readme/mobile-wireframe.png)  
 ![Desktop Wireframe](./src/assets/readme/desktop-wireframe.png)
 
-</details><br/>
+</details>
 
 ## Site Structure
 
-- **Homepage:** Highlights promotions, new arrivals, and links to category pages (via filters).
-- **Shop Page:** Full list of sneakers with advanced filters and search.
-- **Product Page:** Displays details and allows user to add product to cart.
-- **Cart Page:** Lists all products added by user with quantity and total price.
-- **Checkout:** Stripe-hosted checkout page.
-- **Success / Cancel:** Order confirmation or payment error message.
+- `/` → Homepage
+- `/shop` → All products with filters
+- `/product/:id` → Product detail page
+- `/cart` → Cart
+- `/checkout` → Stripe Checkout
+- `/success` → Success page
+- `/cancel` → Cancel page
+- `/contact` → Contact form
+- `*` → 404 Not Found
 
 ## Design Choices
 
-- **Color Scheme:** Black & white with subtle tones of grey and vibrant accents for call-to-actions.
-- **Typography:** Clean sans-serif font for a modern and sharp look.
-- **Layout:** Grid-based product presentation, responsive navigation, mobile-friendly UI.
+- **Color palette:** Black/white base with bold accents
+- **Typography:** Modern, sans-serif fonts
+- **Layout:** Mobile-first grid and flex layouts
+- **Animations:** Subtle interactions and hover effects
+- **Accessibility:** Semantic HTML and alt texts for all images
 
 ---
 
-# **Existing Features**
+# 🚀 Existing Features
 
 ## Navigation
 
-- Responsive navbar with burger menu on mobile.
-- Quick links to Home, Shop, and Cart.
-- Category links redirect to `/shop` with predefined filters via query string.
+- Responsive navbar with burger menu
+- Links to Shop, Cart, and Language Switcher
+- Multilingual (EN, IT, ES, FR, DE) via `react-i18next`
 
 ## Homepage
 
-- Carousel with featured products.
-- Sections for promotions, new arrivals, and highlighted items.
-- Category buttons for men, women, and kids — redirecting to `/shop?category=men`, etc.
+- Featured product rotator
+- Sections for Hot, Sale, and New products
+- Category buttons redirect to `/shop?tag=...`
+- Smooth scroll and animations
 
 ## Shop Page
 
-- Product grid layout with image, name, and price.
-- Filter sidebar with:
-  - Brand
-  - Color
-  - Size
-  - Tags
-- Search bar for product name.
+- Grid of all products
+- Dynamic filters by brand, color, size, and tag
+- Search bar
+- Responsive layout
+- All filters update in real time
 
 ## Product Detail
 
-- Image zoom on hover.
-- Title, description, price, available sizes.
-- Add to Cart functionality.
+- Product image with hover swap
+- Title, description, price, and discount
+- Selectable sizes (if available)
+- Add to cart with instant feedback
+- Wishlist toggle icon
 
 ## Cart
 
-- Dynamic cart with update quantity and remove buttons.
-- Price total calculation in real-time.
-- Option to continue shopping or proceed to checkout.
+- List of products with quantity selectors
+- Dynamic price updates and total
+- Remove items or clear entire cart
+- Choose size and see it reflected in cart
+- Responsive layout with mobile optimization
 
 ## Checkout
 
-- Stripe Checkout with delivery/pickup toggle before payment.
-- Stripe handles the payment securely.
-- Backend session creation via Express and Stripe SDK.
+- Stripe Checkout integration via `createCheckoutSession`
+- Toggle delivery or pickup before payment
+- Secure and simple Stripe-hosted payment flow
 
 ## Success / Cancel Pages
 
-- Success page confirms order and thanks the user.
-- Cancel page informs the user payment was not completed.
+- `/success` confirms the order and thanks the user
+- `/cancel` lets user retry if payment fails or is cancelled
+
+## Contact Page
+
+- Responsive contact form with Name, Email, and Message
+- Styled for desktop and mobile
+- Built with semantic accessibility in mind
+
+## 404 Page
+
+- Custom “Page Not Found” page
+- Styled message and navigation link back to Home
 
 ---
 
-# **Technologies Used**
+# 🧪 Technologies Used
 
 ## Languages
 
 - HTML5
-- CSS3
+- CSS3 (modules)
 - JavaScript (ES6)
 - JSX
 
 ## Frameworks & Software
 
 - React
-- Express.js (Node backend)
-- Stripe Checkout
-- Vite (React build tool)
-- Railway (Backend deployment)
-- Vercel (Frontend deployment)
-- GitHub (repo + project board)
-- Cloudinary (image hosting)
+- Node.js + Express (backend)
+- Vite
+- Railway (backend deployment)
+- Vercel (frontend deployment)
 
 ## Libraries
 
 - React Router
-- Stripe JS
-- Dotenv
+- Stripe JS & Stripe SDK
+- React Toastify
 - Axios
 - React Icons
-- React Toastify
+- `react-i18next` (internationalization)
+- Dotenv
+- ESLint + Prettier
+- Vitest + React Testing Library (for testing)
 
 ---
 
-# **Testing**
+# 🧩 Future Features
 
-## Code Validation
-
-- HTML/CSS tested via W3C Validators.
-- ESLint used for JSX validation.
-
-## Manual Testing
-
-| Test | Result |
-|------|--------|
-| Visit homepage on desktop | ✅ |
-| Visit homepage on mobile | ✅ |
-| Click category links | ✅ Redirects with filter applied |
-| Filter products in shop | ✅ |
-| Search for product | ✅ |
-| Add/remove items from cart | ✅ |
-| Proceed to Stripe checkout | ✅ |
-| Complete a payment with Stripe | ✅ |
-| Try cancelling payment | ✅ Redirects to cancel page |
-| View cart persistence | ✅ |
-| Test responsiveness on all screen sizes | ✅ |
-
-## Known Bugs
-
-- No authentication system is implemented yet.
-- No admin dashboard or inventory management system.
-- Cart is stored in local state — no persistence on refresh.
-- No email confirmation yet (planned for future release).
+- Email confirmation after purchase
+- User authentication (sign up / login)
+- Admin dashboard to manage inventory and orders
+- Persistent cart using localStorage or backend
+- Product rating and reviews
+- Pagination or infinite scroll in Shop
+- Filtering by price range
+- Sort by popularity or newest
+- Newsletter signup form
 
 ---
 
-# **Deployment**
+# 🧪 Testing
+
+See full testing documentation in [`TESTING.md`](./TESTING.md)  
+Includes:
+
+- ✅ Automated unit tests (Vitest + React Testing Library)
+- ✅ Manual tests with expected results
+- ❗ Known bugs and future testing plans
+
+---
+
+# 🚀 Deployment
 
 ## Frontend
 
@@ -238,19 +260,13 @@ Wireframes were hand-sketched during planning. The layout was optimized for both
 
 ## Backend
 
-- Deployed on [Render](https://dashboard.render.com)
-- Uses environment variables for Stripe secret keys
-- `/create-checkout-session` handles checkout logic
+- Node/Express server deployed via [Railway](https://railway.app/)
+- Manages Stripe session creation via `/create-checkout-session`
 
-## Cloning Instructions
+## Setup Instructions
 
-1. Clone repo:  
-   `git clone https://github.com/alelodato/sneakers-vault`
-2. Install dependencies:  
-   `npm install`
-3. Run development server:  
-   `npm run dev`
-
----
-
-All code written by **Alessio Lodato**.
+```bash
+git clone https://github.com/alelodato/sneakers-vault
+cd sneakers-vault
+npm install
+npm run dev
