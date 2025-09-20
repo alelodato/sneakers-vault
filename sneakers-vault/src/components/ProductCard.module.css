@@ -1,14 +1,16 @@
 .card {
   background: #141820;
-  border: 1px solid #262b36;
-  border-radius: 12px;
-  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   color: #e5e7eb;
-  font-family: "Sansation", sans-serif;
-  font-weight: 300;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
-  letter-spacing: 1px;
-  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .card a {
@@ -22,6 +24,8 @@
   overflow: hidden;
   border-radius: 10px;
   background: #0d1016;
+  min-height: 100px;
+  min-width: 100px;
 }
 
 .img,
@@ -46,10 +50,10 @@
 
 .row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+  flex-direction: column;
+  min-width: 60%;
 }
+
 .title {
   font-weight: 600;
   font-size: 0.7rem;
@@ -59,11 +63,6 @@
   display: flex;
   flex-direction: column;
   font-variant-numeric: tabular-nums;
-}
-
-.oldPrice,
-.newPrice {
-  padding: 5px;
 }
 
 .oldPrice {
@@ -96,13 +95,23 @@
   padding: 5px;
   line-height: 1;
   cursor: pointer;
-  border-radius: 8px;            /* per focus/hover piacevoli */
-  transition: transform .1s ease, background-color .15s ease, opacity .15s ease;
+  border-radius: 8px; /* per focus/hover piacevoli */
+  transition: transform 0.1s ease, background-color 0.15s ease,
+    opacity 0.15s ease;
 }
 
-.iconBtn:hover { background: rgba(0,0,0,.06); transform: translateY(-1px); }
-.iconBtn:active { transform: translateY(0); opacity: .85; }
-.iconBtn:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+.iconBtn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+.iconBtn:active {
+  transform: translateY(0);
+  opacity: 0.85;
+}
+.iconBtn:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
 
 .error {
   color: #d33;
@@ -111,5 +120,37 @@
 }
 
 /* Stato cuore attivo (se lo usi) */
-.heartOn  { color: #e63946 !important; }
-.heartOff { color: inherit; }
+.heartOn {
+  color: #e63946 !important;
+}
+.heartOff {
+  color: inherit;
+}
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+  .card {
+    display: block;
+    padding: 10px;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 12px;
+    border: #262b36;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .row {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+  .oldPrice,
+  .newPrice {
+    padding: 5px;
+  }
+}

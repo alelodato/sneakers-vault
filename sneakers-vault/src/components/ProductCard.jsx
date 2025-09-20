@@ -30,7 +30,6 @@ export default function ProductCard({ p }) {
           )}
         </div>
       </Link>
-
       <div className={styles.row}>
         <Link to={`/product/${p.slug}`} className={styles.title}>
           <h3>{p.title}</h3>
@@ -46,9 +45,7 @@ export default function ProductCard({ p }) {
             <span className={styles.newPrice}>€{p.price}</span>
           )}
         </div>
-      </div>
-
-      <div className={styles.cardIcons}>
+        <div className={styles.cardIcons}>
         <button
           type="button"
           className={styles.iconBtn}
@@ -62,6 +59,7 @@ export default function ProductCard({ p }) {
             }`}
           />
         </button>
+      </div>
       </div>
     </article>
   );

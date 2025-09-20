@@ -5,7 +5,6 @@
 
 .coverTxt {
   background: radial-gradient(rgba(0, 0, 0, 0.45));
-  padding: 16px;
   min-height: 100vh;
 }
 
@@ -17,16 +16,18 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  margin: 30px;
 }
 
 .filterBtn {
   background: none;
   border: none;
+  margin-top: 10px;
 }
 
 .filterBtn i {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .filterBtn i:hover {
@@ -113,4 +114,11 @@
 .clearBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/*Media query for tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+  .filterBtn i {
+    font-size: 2rem;
+  }
 }
