@@ -12,6 +12,7 @@ import Wishlist from "./pages/WishList";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import ProductPage from "./pages/ProductPage";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 
 

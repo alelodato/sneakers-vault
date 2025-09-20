@@ -1,7 +1,10 @@
 .notfound {
   text-align: center;
   padding: 60px 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .notfound h1 {
