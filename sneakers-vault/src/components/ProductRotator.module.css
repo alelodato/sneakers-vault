@@ -5,7 +5,6 @@
 .row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
 }
 .controls {
   display: flex;
@@ -29,6 +28,10 @@
   margin: 20px auto;
   max-width: 1200px;
   padding: 0 30px;
+}
+
+.row {
+  gap: 16px;
 }
 }
 
