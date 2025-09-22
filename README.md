@@ -212,34 +212,30 @@ For the rest of the content I decided to use the [Oxanium](https://fonts.google.
 - React
 - Node.js + Express (backend)
 - Vite
-- Railway (backend deployment)
+- Render (backend deployment)
 - Vercel (frontend deployment)
 
 ## Libraries
 
-- React Router
-- Stripe JS & Stripe SDK
-- React Toastify
-- Axios
-- React Icons
-- `react-i18next` (internationalization)
-- Dotenv
-- ESLint + Prettier
-- Vitest + React Testing Library (for testing)
+- React Router;
+- Stripe JS & Stripe SDK;
+- `i18next`;
+- Dotenv;
+- ESLint + Prettier;
+- Vitest + React Testing Library (for testing).
 
 ---
 
 # 🧩 Future Features
 
-- Email confirmation after purchase
-- User authentication (sign up / login)
-- Admin dashboard to manage inventory and orders
-- Persistent cart using localStorage or backend
-- Product rating and reviews
-- Pagination or infinite scroll in Shop
-- Filtering by price range
-- Sort by popularity or newest
-- Newsletter signup form
+- Email confirmation after purchase;
+- User authentication (sign up / login);
+- Admin dashboard to manage inventory and orders;
+- Product rating and reviews;
+- Pagination or infinite scroll in Shop;
+- Filtering by price range;
+- Sort by popularity or newest;
+- Newsletter signup form.
 
 ---
 
@@ -262,8 +258,8 @@ Includes:
 
 ## Backend
 
-- Node/Express server deployed via [Railway](https://railway.app/)
-- Manages Stripe session creation via `/create-checkout-session`
+- Node/Express server deployed via [Render](https://render.com/);
+- Manages [Stripe](https://stripe.com/) session creation via `/create-checkout-session`.
 
 ## Setup Instructions
 
