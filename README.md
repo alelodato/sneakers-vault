@@ -139,62 +139,62 @@ For the rest of the content I decided to use the [Oxanium](https://fonts.google.
 
 ## Navigation
 
-- Responsive navbar with burger menu
-- Links to Shop, Cart, and Language Switcher
+- Responsive navbar with icons redirecting to shop, wishlist and cart pages, and also featuring a searchbar.
+- Links shop page filtered with men,women,kids,trending,discounted and new items.Also link redirecting from the homepage to the contact page.
 - Multilingual (EN, IT, ES, FR, DE) via `react-i18next`
 
 ## Homepage
 
-- Featured product rotator
-- Sections for Hot, Sale, and New products
-- Category buttons redirect to `/shop?tag=...`
-- Smooth scroll and animations
+- Hero section with header, background image and buttons redirecting to shop page filtered with men,women and kids products `/shop?tag=...`;
+- Responsive products layout;
+- Sections for Hot, Sale, and New products with a Featured product rotator, switching products with a set time interval;
+- Contact link redirecting to contact page;
+- Language switch at the bottom of the page.
 
 ## Shop Page
 
-- Grid of all products
-- Dynamic filters by brand, color, size, and tag
-- Search bar
-- Responsive layout
-- All filters update in real time
+- Grid of all products;
+- Dynamic filters by brand, color, size, and tag;
+- Responsive products layout;
+- All filters update in real time.
 
 ## Product Detail
 
-- Product image with hover swap
-- Title, description, price, and discount
-- Selectable sizes (if available)
-- Add to cart with instant feedback
-- Wishlist toggle icon
+- Product image;
+- Title, description, price, and discount if applied;
+- Selectable sizes (if available);
+- Add to cart with instant feedback;
+- Wishlist toggle icon.
 
 ## Cart
 
-- List of products with quantity selectors
-- Dynamic price updates and total
-- Remove items or clear entire cart
-- Choose size and see it reflected in cart
-- Responsive layout with mobile optimization
+- List of products with quantity selector;
+- Dynamic price updates and total;
+- Remove items or clear entire cart;
+- Choose size and see it reflected in cart;
+- Responsive layout with mobile optimization.
 
 ## Checkout
 
-- Stripe Checkout integration via `createCheckoutSession`
-- Toggle delivery or pickup before payment
-- Secure and simple Stripe-hosted payment flow
+- Stripe Checkout integration via `createCheckoutSession`;
+- Toggle delivery option and time slot before payment;
+- Secure and simple Stripe-hosted payment flow.
 
 ## Success / Cancel Pages
 
-- `/success` confirms the order and thanks the user
-- `/cancel` lets user retry if payment fails or is cancelled
+- `/success` confirms the order and thanks the user;
+- `/cancel` lets user retry if payment fails or is cancelled.
 
 ## Contact Page
 
-- Responsive contact form with Name, Email, and Message
-- Styled for desktop and mobile
-- Built with semantic accessibility in mind
+- Responsive contact form with Name, Email, and Message;
+- Styled for desktop and mobile;
+- Other contacts and social icons at the bottom of the page.
 
 ## 404 Page
 
-- Custom “Page Not Found” page
-- Styled message and navigation link back to Home
+- Custom “Page Not Found” page;
+- Styled message and navigation link back to Home.
 
 ---
 
