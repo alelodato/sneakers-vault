@@ -139,17 +139,20 @@ For the rest of the content I decided to use the [Oxanium](https://fonts.google.
 
 ## Navigation
 
-- Responsive navbar with icons redirecting to shop, wishlist and cart pages, and also featuring a searchbar.
-- Links shop page filtered with men,women,kids,trending,discounted and new items.Also link redirecting from the homepage to the contact page.
-- Multilingual (EN, IT, ES, FR, DE) via `react-i18next`
+- Responsive navbar with icons redirecting to shop, wishlist and cart pages, and also featuring a searchbar. ![Navbar](./sneakers-vault/src/assets/img/readme/navbar-rdm.jpg)
+![Searchbar](./sneakers-vault/src/assets/img/readme/search-rdm.jpg)
+- Links shop page filtered with men,women,kids,trending,discounted and new items. Also link redirecting from the homepage to the contact page.
+- Multilingual (EN, IT, ES, FR, DE) via `react-i18next`.
 
 ## Homepage
 
-- Hero section with header, background image and buttons redirecting to shop page filtered with men,women and kids products `/shop?tag=...`;
+- Hero section with header, background image and buttons redirecting to shop page filtered with men,women and kids products `/shop?tag=...`; ![Homepage](./sneakers-vault/src/assets/img/readme/hero-rdm.jpg)
 - Responsive products layout;
-- Sections for Hot, Sale, and New products with a Featured product rotator, switching products with a set time interval;
+- Sections for Trending, Sale, and New products with a Featured product rotator, switching products with a set time interval; ![Sale](./sneakers-vault/src/assets/img/readme/sale-rdm.jpg)
 - Contact link redirecting to contact page;
 - Language switch at the bottom of the page.
+![Language selector](./sneakers-vault/src/assets/img/readme/lang-rdm.jpg)
+
 
 ## Shop Page
 
@@ -157,6 +160,7 @@ For the rest of the content I decided to use the [Oxanium](https://fonts.google.
 - Dynamic filters by brand, color, size, and tag;
 - Responsive products layout;
 - All filters update in real time.
+![Filters](./sneakers-vault/src/assets/img/readme/filters-rdm.jpg)
 
 ## Product Detail
 
@@ -165,6 +169,12 @@ For the rest of the content I decided to use the [Oxanium](https://fonts.google.
 - Selectable sizes (if available);
 - Add to cart with instant feedback;
 - Wishlist toggle icon.
+![Product Detail](./sneakers-vault/src/assets/img/readme/product-rdm.jpg)
+
+## Wishlist
+
+- List of products added to wishlist;
+![Wishlist](./sneakers-vault/src/assets/img/readme/wishlist-rdm.jpg)
 
 ## Cart
 
@@ -173,12 +183,16 @@ For the rest of the content I decided to use the [Oxanium](https://fonts.google.
 - Remove items or clear entire cart;
 - Choose size and see it reflected in cart;
 - Responsive layout with mobile optimization.
+![Cart](./sneakers-vault/src/assets/img/readme/cart-rdm.jpg)
 
 ## Checkout
 
 - Stripe Checkout integration via `createCheckoutSession`;
 - Toggle delivery option and time slot before payment;
 - Secure and simple Stripe-hosted payment flow.
+![Checkout](./sneakers-vault/src/assets/img/readme/checkout-rdm.jpg)
+![Checkout2](./sneakers-vault/src/assets/img/readme/checkout2-rdm.jpg)
+![Stripe](./sneakers-vault/src/assets/img/readme/stripe-rdm.jpg)
 
 ## Success / Cancel Pages
 
