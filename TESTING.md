@@ -17,27 +17,13 @@ The main focus was to test critical pages/components for rendering, interactivit
 
 | Test Suite              | Description                                                              | Status |
 |-------------------------|--------------------------------------------------------------------------|--------|
-| `Home.test.jsx`         | Verifies rendering of home sections, links, titles, and structure        | ✅ Pass |
+| `HomePage.test.jsx`         | Verifies rendering of home sections, links, titles, and structure        | ✅ Pass |
 | `ProductCard.test.jsx`  | Tests image, title, wishlist interaction, and prices (with/without discount) | ✅ Pass |
-| `Cart.test.jsx`         | Checks cart item rendering, buttons for quantity update/removal, total price | ✅ Pass |
-| `ProductDetail.test.jsx`| Tests conditional rendering, size selection, and “Add to Cart” button    | ✅ Pass |
-| `Filters.test.jsx`      | Ensures filter checkboxes toggle and trigger handler                     | ✅ Pass |
-| `SearchBar.test.jsx`    | Tests input change and search trigger on enter                           | ✅ Pass |
+| `CartPage.test.jsx`         | Checks cart item rendering, buttons for quantity update/removal, total price | ✅ Pass |
+| `CheckoutPage.test.jsx`| Tests if an item is correctly added to the cart with price, quantity, size infos and also button to payment    | ✅ Pass |
 
 ---
 
-### 🔍 Example: `Cart.test.jsx`
-
-This test covers:
-
-- Rendering of cart with dummy product
-- Display of product image, title, and price
-- Functionality of + / - / remove buttons
-- Total price calculation
-
-Test uses mocked `CartContext` to simulate state and handler behavior.
-
----
 
 ## 🧪 Manual Testing
 
@@ -46,10 +32,10 @@ Each key user flow and interaction was verified by hand.
 
 | Functionality                             | Test Case                                                        | Status |
 |------------------------------------------|-------------------------------------------------------------------|--------|
-| Homepage Loads                            | Check all sections (carousel, new arrivals, category buttons)     | ✅     |
+| Homepage Loads                            | Check all sections (carousel, product rotator, category buttons)     | ✅     |
 | Category buttons                          | Click "Men", "Women", "Kids" redirects to `/shop?category=...`   | ✅     |
 | Product Grid                              | Products load correctly with image, title, price                  | ✅     |
-| Product Detail Page                       | Shows correct info, image zoom, size selection                    | ✅     |
+| Product Detail Page                       | Shows correct info, image, size selection                    | ✅     |
 | Add to Cart                               | Product gets added, shows in Cart page                            | ✅     |
 | Cart Interactions                         | Quantity update (+/-), remove, total updates                      | ✅     |
 | Cart Persistence                          | Cart data stays on page reload (within session)                   | ✅     |
@@ -78,17 +64,14 @@ Each key user flow and interaction was verified by hand.
 
 | Issue                  | Description                                                  | Status     |
 |------------------------|--------------------------------------------------------------|------------|
-| No persistent cart     | Cart resets on browser refresh (no localStorage yet)         | To Improve |
 | No admin panel         | No backend dashboard for managing products/orders            | Planned    |
 | No user authentication | Users cannot register or login                               | Planned    |
 | No email confirmation  | Orders not followed up with confirmation emails              | Planned    |
-| No form validation     | Contact form lacks real-time field validation                | To Add     |
 
 ---
 
 ## 💡 Suggestions for Future Testing
 
-- Add full **E2E testing** using Cypress or Playwright
-- Add **coverage reports** via `vitest --coverage` or `c8`
-- Write tests for **checkout backend logic**
-- Test all edge cases: discounts, filters + search combined, wishlist + checkout
+- Add full **E2E testing** using Cypress or Playwright;
+- Write tests for **checkout backend logic**;
+- Test all edge cases: discounts, filters + search combined, wishlist + checkout.

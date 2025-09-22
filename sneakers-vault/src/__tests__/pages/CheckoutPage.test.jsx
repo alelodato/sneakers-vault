@@ -15,7 +15,7 @@ vi.mock('react-i18next', () => ({
   }),
 }));
 
-// Mock contesto del carrello con un prodotto fittizio
+// Cart mock context wiht fictional product
 vi.mock('@contexts/CartContext', () => ({
   useCart: () => ({
     items: [
@@ -41,7 +41,6 @@ describe('Checkout', () => {
       </BrowserRouter>
     );
 
-    // Il testo è "checkout.summary" perché mockato sopra
     const title = screen.getByText('checkout.summary');
     expect(title).toBeInTheDocument();
   });
