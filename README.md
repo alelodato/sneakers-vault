@@ -58,7 +58,7 @@ Sneakers Vault is a modern, responsive e-commerce website designed for sneaker l
 - Search by keyword or brand
 - View detailed product pages
 - Add items to cart and manage them
-- Choose between delivery or store pickup
+- Choose delivery options and time slot
 - Complete secure payments via Stripe
 
 ## 🎯 Site Owner Goals
@@ -125,11 +125,13 @@ Initial wireframes were sketched to guide layout decisions with a mobile-first a
 
 ## Design Choices
 
-- **Color palette:** Black/white base with bold accents
-- **Typography:** Modern, sans-serif fonts
-- **Layout:** Mobile-first grid and flex layouts
-- **Animations:** Subtle interactions and hover effects
-- **Accessibility:** Semantic HTML and alt texts for all images
+- **Color palette:** White(#fff) with black icons and logo for the navbar,different background images for: **Homepage** ![homepage backg](./sneakers-vault/src/assets/img/hero-sneakers.jpeg) **Shop Page** ![shop backg](./sneakers-vault/src/assets/img/shopBackground.jpg) **Wishlist,Cart** and **Checkout** ![shop backg2](./sneakers-vault/src/assets/img/shopBackground2.jpg).
+- **Typography:** For the logo i've used the font [Rock Salt](https://fonts.google.com/specimen/Rock+Salt) which i found modern and appropriate for a retail shop logo;
+I've then used the [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue)font for the homepage header, as i think the font has a strong visual impact and it's perfect to be used as a hero section header, so one of the first elements seen by a user.
+For the rest of the content I decided to use the [Oxanium](https://fonts.google.com/specimen/Oxanium) font which i find modern but still easy to read, with a kind of futuristic font design that i found appropriate for the concept of the website and the user target. The icons used in the project have been taken from [Font Awesome](https://fontawesome.com/).
+- **Layout:** I've designed the website to be mobile first, with elements that are responsive adapting and in some occasions also changing shape and layout on larger screens.
+- **Animations:** Subtle interactions like the wishlist icon becoming red when an item is added to the wishlist and hover effects, as i think for this kind of project animations should have been kept minimal to maximise user experience.
+- **Accessibility:** Semantic HTML and alt texts for all images.
 
 ---
 
