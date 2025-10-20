@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { products } from "../data/products";
 import { useSearchParams } from "react-router-dom";
 import ProductGrid from "../components/ProductGrid";
@@ -33,6 +33,11 @@ export default function Shop() {
   const [selectedBrands, setSelectedBrands] = useState([]); // ["Nike","Adidas",...]
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
+
+  // refs to avoid overwriting user selections when syncing from URL
+  const tagsTouchedRef = useRef(false);
+  const brandsTouchedRef = useRef(false);
+
   // true if at least a filter is active (UI o URL)
   const hasActiveFilters =
     selectedTags.length > 0 ||
@@ -50,6 +55,9 @@ export default function Shop() {
     setSelectedBrands([]);
     setSelectedColors([]);
     setSelectedSizes([]);
+    // allow URL -> state sync again
+    tagsTouchedRef.current = false;
+    brandsTouchedRef.current = false;
     setSearchParams((prev) => {
       const p = new URLSearchParams(prev);
       p.delete("tag");
@@ -62,22 +70,23 @@ export default function Shop() {
 
   const toggleFilter = () => setShowFilters((v) => !v);
 
-  const handleTagChange = (tag) =>
+  const handleTagChange = (tag) => {
+    tagsTouchedRef.current = true;
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     );
+  };
 
-  const handleBrandChange = (brand) =>
+  const handleBrandChange = (brand) => {
+    brandsTouchedRef.current = true;
     setSelectedBrands((prev) =>
       prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand]
     );
+  };
 
   const handleSizeChange = (sizeCode) => {
-    setSelectedSizes(
-      (prev) =>
-        prev.includes(sizeCode)
-          ? prev.filter((s) => s !== sizeCode) // se già selezionata, la rimuove
-          : [...prev, sizeCode] // altrimenti la aggiunge
+    setSelectedSizes((prev) =>
+      prev.includes(sizeCode) ? prev.filter((s) => s !== sizeCode) : [...prev, sizeCode]
     );
   };
 
@@ -116,20 +125,47 @@ export default function Shop() {
     []
   );
 
+  // sync from URL -> local state, but only if user hasn't interacted yet
   useEffect(() => {
-    setSelectedTags((prev) => {
-      const isSame =
-        prev.length === paramTags.length &&
-        prev.every((t) => paramTags.includes(t));
-      return isSame ? prev : paramTags;
-    });
-    setSelectedBrands((prev) => {
-      const isSame =
-        prev.length === paramBrands.length &&
-        prev.every((b) => paramBrands.includes(b));
-      return isSame ? prev : paramBrands;
-    });
+    if (!tagsTouchedRef.current) {
+      setSelectedTags((prev) => {
+        const isSame =
+          prev.length === paramTags.length &&
+          prev.every((t) => paramTags.includes(t));
+        return isSame ? prev : paramTags;
+      });
+    }
+    if (!brandsTouchedRef.current) {
+      setSelectedBrands((prev) => {
+        const isSame =
+          prev.length === paramBrands.length &&
+          prev.every((b) => paramBrands.includes(b));
+        return isSame ? prev : paramBrands;
+      });
+    }
   }, [paramTags, paramBrands]);
+
+  // sync selected filters to URL so selections persist / can be shared
+  useEffect(() => {
+    setSearchParams((prev) => {
+      const p = new URLSearchParams(prev);
+      if (selectedTags.length) p.set("tag", selectedTags.join(","));
+      else p.delete("tag");
+      if (selectedBrands.length) p.set("brand", selectedBrands.join(","));
+      else p.delete("brand");
+      if (selectedColors.length) p.set("color", selectedColors.join(","));
+      else p.delete("color");
+      if (selectedSizes.length) p.set("size", selectedSizes.join(","));
+      else p.delete("size");
+      return p;
+    });
+  }, [
+    selectedTags,
+    selectedBrands,
+    selectedColors,
+    selectedSizes,
+    setSearchParams,
+  ]);
 
   return (
     <section className={styles.section}>
@@ -142,7 +178,7 @@ export default function Shop() {
           <i className="fa fa-filter" />
         </button>
         <div className={styles.header}>
-          <h2 className={styles.title}>Shop The Vault</h2>
+          <h2 className={styles.title}>Shop</h2>
         </div>
 
         {showFilters && (
@@ -152,7 +188,7 @@ export default function Shop() {
               onClick={toggleFilter}
               aria-label="close filters"
             >
-              <i class="fa-solid fa-x"></i>
+              <i className="fa-solid fa-x"></i>
             </button>
             <h3>Item Type</h3>
             {TAG_OPTIONS.map((tag) => (
@@ -177,6 +213,7 @@ export default function Shop() {
                 {brand}
               </label>
             ))}
+
             <h3>Colors</h3>
             {colors.map((color) => (
               <label key={color}>
@@ -194,6 +231,7 @@ export default function Shop() {
                 {color}
               </label>
             ))}
+
             <h3>Sizes</h3>
             {["men", "women", "kids"].map((group) => (
               <div key={group}>
@@ -216,6 +254,7 @@ export default function Shop() {
                 ))}
               </div>
             ))}
+
             <button
               type="button"
               className={styles.clearBtn}
