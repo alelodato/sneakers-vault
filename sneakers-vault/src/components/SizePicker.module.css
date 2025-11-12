@@ -12,6 +12,7 @@
   background: #fff;
   font-size: 0.5rem;
   cursor: pointer;
+  color: #111;
 }
 .selected {
   border-color: #111;
