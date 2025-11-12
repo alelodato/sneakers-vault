@@ -56,14 +56,6 @@ export default function Home() {
               {t('home.more')} <i class="fa-regular fa-circle-right"></i>
             </p>
           </Link>
-          <h4 className={styles.contact} >
-            <Link className={styles.link} to={"Contact"}>
-              {t('home.contact')}
-            </Link>
-          </h4>
-          <h4 className={styles.lang} >
-            {t('home.lang')}<LanguageSwitcher />
-          </h4>
         </div>
       </div>
       <SearchBar />
