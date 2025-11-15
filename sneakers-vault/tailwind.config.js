@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['Orbitron', 'sans-serif'],
+        heading: ['Oxanium', 'sans-serif'],
         body: ['Poppins', 'sans-serif'],
         accent: ['Rock Salt', 'cursive'],
       },

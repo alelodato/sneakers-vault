@@ -219,14 +219,9 @@ export default function Shop() {
             >
               <i className="fa fa-filter" />
               Filtri
-              {hasActiveFilters ? (
-                <span className="ml-1 rounded-md bg-slate-900 px-1.5 py-0.5 text-xs font-semibold text-white">
-                  •
-                </span>
-              ) : null}
             </button>
 
-            <h1 className="font-heading text-3xl sm:text-4xl text-slate-50 tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl text-slate-50 tracking-tight">
               Shop
             </h1>
           </div>
